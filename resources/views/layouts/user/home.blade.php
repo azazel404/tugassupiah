@@ -36,7 +36,7 @@
 	<div class="row mt-7">
 	 	<div class="col-md-12 col-12">
 	 		<div class="text-center">
-	 			<h2 class="font-weight-light">Selamat Datang di Website BPR Agra Dhana, <br> Kami siap melayani kebutuhan finansial Anda.</h2>
+	 			<h2 class="font-weight-light">Selamat Datang di Website BPR PONDASI, <br> Kami siap melayani kebutuhan finansial Anda.</h2>
 	 		</div>
 	 	</div>
 	</div>
@@ -46,7 +46,7 @@
 			<div class="text-center p-4">
 				<img src="{{ asset('img/icon/kredit.png') }}" class="img-icon">
 				<h4 class="mt-3 font-weight-bold">Kredit</h4>
-				<p>Kami menghadirkan Produk Jasa Kredit dan Pembiayaan untuk segala kebutuhan anda di BPR Agra Dhana.</p>
+				<p>Kami menghadirkan Produk Jasa Kredit dan Pembiayaan untuk segala kebutuhan anda di BPR Pondasi.</p>
 			</div>
 		</div>
 		<div class="col-md-4 col-12">

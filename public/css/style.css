@@ -34,6 +34,18 @@ body{
 .main-footer{
 	background-color: #eee;
 }
+.social-menu li a{
+	font-size: 24px;
+}
+.facebook{
+	color: #4267B2;
+}
+.twitter{
+	color: #8AD4DF;
+}
+.instagram{
+	color: #A47A61;
+}
 /*end footer*/
 
 
@@ -71,4 +83,5 @@ body{
 .list-unstyled li a{
 	color: #000;
 }
+
 /*end component*/

@@ -3,6 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bank Bpr</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 
@@ -57,7 +58,7 @@
 			<div class="row">
 				<div class="col-md-6 mt-5">
 					<div class="logo">
-						<h4 class="">BPR Agra Dhana</h4>
+						<h4 class="">BPR Pondasi</h4>
 					</div>
 					<div class="contact-details">
 						<p>Alamat: Komp. Nagoya City Centre blok E No.12, Lubuk Baja,
@@ -66,10 +67,9 @@
 						<p>Email: <a href="mailto:ptbpragradhana@yahoo.co.id">ptbpragradhana@yahoo.co.id</a></p>
 
 						<ul class="social-menu">
-							<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-
+							<li class="list-inline-item"><a href="#"><i class="fab fa-facebook-square facebook"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i class="fab fa-twitter-square twitter"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i class="fab fa-instagram instagram"></i></a></li>
 						</ul>
 					</div>
 				</div>
