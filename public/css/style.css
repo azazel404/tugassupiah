@@ -1,0 +1,74 @@
+body{
+	background-color: #fff !important;
+}
+
+/*navbar*/
+.bg-light{
+	background-color: #fff !important;
+}
+.navbar{
+	box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+.container-nav{
+	width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px !important;
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link{
+	color: rgba(0,0,0,.9);
+}
+.navbar-light .navbar-nav .nav-link{
+	color: rgba(0,0,0,.9);
+}
+.navbar-nav .nav-item{
+	margin-left: 8px;
+	margin-right: 8px;
+}
+/*end navbar*/
+
+/*footer*/
+.main-footer{
+	background-color: #eee;
+}
+/*end footer*/
+
+
+/*component*/
+
+.mt-6{
+	margin-top: 4rem!important;
+}
+.mt-7{
+	margin-top: 5rem!important;
+}
+.mt-8{
+	margin-top: 6rem!important;
+}
+.mt-9{
+	margin-top: 7rem!important;
+}
+
+.img-icon{
+	width: 120px !important;
+	box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.14);
+	border-radius: 22%;
+}
+
+.card{
+	transition: 0.5s;
+}
+.card:hover{
+	box-shadow: 0px 20px 50px 0px rgba(0,0,0,0.14);
+}
+
+.list-unstyled{
+	margin-right: 18px;
+}
+.list-unstyled li a{
+	color: #000;
+}
+/*end component*/
