@@ -12,4 +12,9 @@ class HomeController extends Controller
     {
     	return view('layouts.user.home');
     }
+
+    public function contact()
+    {
+    	return view('layouts.user.contact');
+    }
 }
