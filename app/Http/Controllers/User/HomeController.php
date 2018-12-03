@@ -27,4 +27,9 @@ class HomeController extends Controller
     {
     	return view('layouts.user.sukuBunga');
     }
+
+    public function service()
+    {
+    	return view('layouts.user.service');
+    }
 }

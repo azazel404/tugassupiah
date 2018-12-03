@@ -15,3 +15,4 @@ Route::get('/', 'User\HomeController@index');
 Route::get('/contact', 'User\HomeController@contact');
 Route::get('/profile-perusahaan', 'User\HomeController@profile');
 Route::get('/suku-bunga', 'User\HomeController@sukuBunga');
+Route::get('/fitur-layanan', 'User\HomeController@service');

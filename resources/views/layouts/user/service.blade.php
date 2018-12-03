@@ -4,8 +4,38 @@
 <div class="container">
 	<div class="row mt-5">
 		<div class="col-md-8 col-12">
-			<h1 class="font-weight-bold">Hubungi Kami</h1>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.851669513505!2d106.84972711379898!3d-6.413098995359914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ebb04f6e16fd%3A0xaf59f873ded532c5!2sJl.+H.+Dimun+III%2C+Sukamaju%2C+Cilodong%2C+Kota+Depok%2C+Jawa+Barat+16415!5e0!3m2!1sen!2sid!4v1543848231934" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<h1 class="font-weight-bold">Fitur Layanan</h1>
+			<form>
+				<div class="form-group">
+					<label>Perihal</label>
+					<select class="form-control">
+						<option>Pertanyaan</option>
+						<option>Pengajuan</option>
+						<option>Pertanyaan</option>
+					</select>
+				</div>	
+
+				<div class="form-row">
+					<div class="form-group col">
+						<label>Nama</label>
+						<input type="text" name="name" class="form-control">
+					</div>	
+					<div class="form-group col">
+						<label>Email</label>
+						<input type="email" name="email" class="form-control">
+					</div>	
+				</div>
+
+				<div class="form-group">
+					<label>No. Handphone</label>
+					<input type="number" name="phone" class="form-control">
+				</div>
+
+				<div class="form-group">
+					<label>Pesan</label>
+					<textarea cols="3" rows="8" class="form-control"></textarea>
+				</div>
+			</form>
 		</div>
 		<div class="col-md-4">
 			<div class="card blue">
