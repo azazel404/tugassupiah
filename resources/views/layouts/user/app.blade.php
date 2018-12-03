@@ -28,7 +28,7 @@
 							<a class="dropdown-item" href="#">Profile Perusahaan</a>
 							<a class="dropdown-item" href="#">Laporan</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Something else here</a>
+							<a class="dropdown-item" href="#">Hubungi Kami</a>
 						</div>
 					</li>
 					<li class="nav-item">
@@ -46,7 +46,7 @@
 						</div>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Hubungi kami</a>
+						<a class="nav-link" href="#">Fitur Layanan</a>
 					</li>
 				</ul>
 			</div>
