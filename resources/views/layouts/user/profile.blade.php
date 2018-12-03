@@ -1,41 +1,16 @@
 @extends('layouts.user.app')
 @section('content')
-
 <div class="container">
 	<div class="row mt-5">
 		<div class="col-md-8 col-12">
-			<h1 class="font-weight-bold">Hubungi Kami</h1>
-			<form>
-				<div class="form-group">
-					<label>Perihal</label>
-					<select class="form-control">
-						<option>Pertanyaan</option>
-						<option>Pengajuan</option>
-						<option>Pertanyaan</option>
-					</select>
-				</div>	
-
-				<div class="form-row">
-					<div class="form-group col">
-						<label>Nama</label>
-						<input type="text" name="name" class="form-control">
-					</div>	
-					<div class="form-group col">
-						<label>Email</label>
-						<input type="email" name="email" class="form-control">
-					</div>	
-				</div>
-
-				<div class="form-group">
-					<label>No. Handphone</label>
-					<input type="number" name="phone" class="form-control">
-				</div>
-
-				<div class="form-group">
-					<label>Pesan</label>
-					<textarea cols="3" rows="8" class="form-control"></textarea>
-				</div>
-			</form>
+			<h1 class="font-weight-light">Profile Perusahaan</h1>
+			<img src="{{ asset('img/Banner_ATS.jpg') }}" class="img-fluid mb-4">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
 		<div class="col-md-4">
 			<div class="card blue">
@@ -93,5 +68,4 @@
 		</div>
 	</div>
 </div>
-
 @endsection

@@ -1,41 +1,33 @@
 @extends('layouts.user.app')
 @section('content')
-
 <div class="container">
 	<div class="row mt-5">
 		<div class="col-md-8 col-12">
-			<h1 class="font-weight-bold">Hubungi Kami</h1>
-			<form>
-				<div class="form-group">
-					<label>Perihal</label>
-					<select class="form-control">
-						<option>Pertanyaan</option>
-						<option>Pengajuan</option>
-						<option>Pertanyaan</option>
-					</select>
-				</div>	
+			<h1 class="font-weight-light">Suku Bunga</h1>
+			<img src="{{ asset('img/Banner_ATS.jpg') }}" class="img-fluid mb-4">
 
-				<div class="form-row">
-					<div class="form-group col">
-						<label>Nama</label>
-						<input type="text" name="name" class="form-control">
-					</div>	
-					<div class="form-group col">
-						<label>Email</label>
-						<input type="email" name="email" class="form-control">
-					</div>	
-				</div>
-
-				<div class="form-group">
-					<label>No. Handphone</label>
-					<input type="number" name="phone" class="form-control">
-				</div>
-
-				<div class="form-group">
-					<label>Pesan</label>
-					<textarea cols="3" rows="8" class="form-control"></textarea>
-				</div>
-			</form>
+			<h5 class="font-weight-bold">Jenis tabungan</h5>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>No</th>
+						<th>Jenis tabungan</th>
+						<th>Bunga p.a</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Tab. Dana Siswa</td>
+						<td>s/d 1.00%</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Tab. Dana Vip</td>
+						<td>s/d 7.00%</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		<div class="col-md-4">
 			<div class="card blue">
@@ -93,5 +85,4 @@
 		</div>
 	</div>
 </div>
-
 @endsection

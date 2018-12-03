@@ -17,4 +17,14 @@ class HomeController extends Controller
     {
     	return view('layouts.user.contact');
     }
+
+    public function profile()
+    {
+    	return view('layouts.user.profile');
+    }
+
+    public function sukuBunga()
+    {
+    	return view('layouts.user.sukuBunga');
+    }
 }
