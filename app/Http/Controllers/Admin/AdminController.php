@@ -10,6 +10,6 @@ class AdminController extends Controller
     //
     public function dashboard()
     {
-    	return view('layouts.admin.app');
+    	return view('layouts.admin.dashboard');
     }
 }
