@@ -16,3 +16,5 @@ Route::get('/contact', 'User\HomeController@contact');
 Route::get('/profile-perusahaan', 'User\HomeController@profile');
 Route::get('/suku-bunga', 'User\HomeController@sukuBunga');
 Route::get('/fitur-layanan', 'User\HomeController@service');
+
+Route::get('/admin', 'Admin\AdminController@dashboard');
