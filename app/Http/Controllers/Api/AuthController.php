@@ -18,7 +18,7 @@ class AuthController extends Controller
     	if (Auth::guard('nasabah')->once($credential)) {
     		$token = str_random(64);
     		
-    		$user = User::where('email', $email)->first();
+    		$user = Nasabah::where('email', $req->email)->first();
     		$user->token = $token;
 
     		if ($user->save()) {
