@@ -20,7 +20,7 @@ class CreateNasabahTable extends Migration
             $table->string('fullname');
             $table->string('email', 120)->unique();
             $table->text('address')->nullable();
-            $table->string('token', 64)->unique();
+            $table->string('token', 64)->unique()->nullable();
             $table->string('password');
             $table->timestamps();
         });
