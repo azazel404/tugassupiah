@@ -23,30 +23,63 @@
 		<div class="row">
 			<div class="col-md-12 col-12">
 				<div class="card">
-					<div class="card-header">
-						<a href="#" class="btn btn-primary float-right">+ add new</a>
-					</div>
 					<div class="card-body">
 						<table class="table table-striped">
 							<thead>
 								<tr>
-									<th>No</th>
 									<th>Nama</th>
 									<th>Telepon</th>
 									<th>Email</th>
+									<th>Berita</th>
 									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>1.</td>
 									<td>Fahriansyah</td>
 									<td>08956758694</td>
 									<td>fachryansyah123@gmail.com</td>
+									<td>saya kurang aqua</td>
 									<td>
 										<div class="btn-group">
-											<a href="#" class="btn btn-outline-primary">Edit</a>
-											<a href="#" class="btn btn-outline-danger">delete</a>
+											<button class="btn btn-xs btn-info show-detail" data-id="533">
+											<i class="fa fa-eye"></i>
+											</button>
+											<button class="btn btn-xs btn-success mark-read" data-id="533" data-toggle="tooltip" data-placement="top" data-title="Mark as read" data-original-title="" title="">
+											<i class="fa fa-check"></i>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>Fahriansyah</td>
+									<td>08956758694</td>
+									<td>fachryansyah123@gmail.com</td>
+									<td>saya kurang aqua</td>
+									<td>
+										<div class="btn-group">
+											<button class="btn btn-xs btn-info show-detail" data-id="533">
+											<i class="fa fa-eye"></i>
+											</button>
+											<button class="btn btn-xs btn-success mark-read" data-id="533" data-toggle="tooltip" data-placement="top" data-title="Mark as read" data-original-title="" title="">
+											<i class="fa fa-check"></i>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>Fahriansyah</td>
+									<td>08956758694</td>
+									<td>fachryansyah123@gmail.com</td>
+									<td>saya kurang aqua</td>
+									<td>
+										<div class="btn-group">
+											<button class="btn btn-xs btn-info show-detail" data-id="533">
+											<i class="fa fa-eye"></i>
+											</button>
+											<button class="btn btn-xs btn-success mark-read" data-id="533" data-toggle="tooltip" data-placement="top" data-title="Mark as read" data-original-title="" title="">
+											<i class="fa fa-check"></i>
+											</button>
 										</div>
 									</td>
 								</tr>

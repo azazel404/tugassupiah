@@ -29,6 +29,7 @@ Route::get('/admin/category', 'Admin\AdminController@category');
 Route::get('/admin/category/edit', 'Admin\AdminController@editCategory');
 
 Route::get('/admin/pengaduan', 'Admin\AdminController@pengaduan');
+Route::get('/admin/pengajuan', 'Admin\AdminController@pengajuan');
 
 Route::get('/admin/nasabah', 'Admin\AdminController@nasabah');
 Route::get('/admin/nasabah/add', 'Admin\AdminController@addNasabah');

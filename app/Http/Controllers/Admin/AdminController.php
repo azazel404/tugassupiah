@@ -47,6 +47,10 @@ class AdminController extends Controller
     {
     	return view('layouts.admin.pengaduan.list');
     }
+    public function pengajuan()
+    {
+    	return view('layouts.admin.pengajuan.list');
+    }
 
     public function nasabah()
     {
