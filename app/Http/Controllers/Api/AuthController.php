@@ -19,6 +19,23 @@ class AuthController extends Controller
     		$token = str_random(64);
     		
     		$user = User::where('email', $email)->first();
+    		$user->token = $token;
+
+    		if ($user->save()) {
+    			return response()->json([
+    				"message" 	=> "OKE!",
+    				"status" 	=> 200,
+    				"data" 		=> [
+    					"token" => $token
+    				]
+    			]);
+    		}
+
+    		return response()->json([
+    			"message" 	=> "oops.. looks like something went wrong",
+    			"status" 	=> 500,
+    			"data" 		=> []
+    		]);
     	}
 
     	return response()->json([
