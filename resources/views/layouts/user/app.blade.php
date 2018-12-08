@@ -20,16 +20,8 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item dropdown active">
-						<a class="nav-link dropdown-toggle" href="#" id="dropdownTentang" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Tentang Kami
-						</a>
-						<div class="dropdown-menu" aria-labelledby="dropdownTentang">
-							<a class="dropdown-item" href="#">Profile Perusahaan</a>
-							<a class="dropdown-item" href="#">Laporan</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Hubungi Kami</a>
-						</div>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Tentang Kami</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">News & Promo</a>
@@ -39,14 +31,16 @@
 							Produk
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Something else here</a>
+							<a class="dropdown-item" href="#">Tabungan</a>
+							<a class="dropdown-item" href="#">Kredit</a>
+							<a class="dropdown-item" href="#">Deposito</a>
 						</div>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Fitur Layanan</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Hubungi Kami</a>
 					</li>
 				</ul>
 			</div>
