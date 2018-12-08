@@ -12,6 +12,11 @@
 */
 
 Route::get('/', 'User\HomeController@index');
+
+Route::get('/login', function(){
+	return view('layouts.auth.login');
+});
+
 Route::get('/contact', 'User\HomeController@contact');
 Route::get('/profile-perusahaan', 'User\HomeController@profile');
 Route::get('/suku-bunga', 'User\HomeController@sukuBunga');
