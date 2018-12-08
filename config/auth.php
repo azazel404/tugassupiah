@@ -41,6 +41,11 @@ return [
             'provider' => 'users',
         ],
 
+        'nasabah' => [
+            'driver' => 'session',
+            'provider' => 'nasabahs',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -70,6 +75,11 @@ return [
             'model' => App\User::class,
         ],
 
+        'nasabahs' => [
+            'driver' => 'eloquent',
+            'model' => App\Nasabah::class,
+        ],
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -94,6 +104,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+        'nasabahs' => [
+            'provider' => 'nasabahs',
             'table' => 'password_resets',
             'expire' => 60,
         ],
