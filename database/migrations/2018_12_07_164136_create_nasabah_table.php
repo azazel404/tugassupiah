@@ -17,7 +17,7 @@ class CreateNasabahTable extends Migration
             $table->increments('id');
             $table->string('code_customer');
             $table->string('rekening');
-            $table->string('name');
+            $table->string('fullname');
             $table->string('email', 120)->unique();
             $table->text('address')->nullable();
             $table->string('password');
