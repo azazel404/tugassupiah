@@ -52,7 +52,7 @@
 
 		<!-- Right navbar links -->
 		<ul class="navbar-nav ml-auto">
-		<li class="nav-item"><a href="#" class="nav-link logout">Logout &nbsp<i class="fa fa-sign-out"></i></a></li>
+		<li class="nav-item"><a href="{{ route('logout') }}" class="nav-link logout">Logout &nbsp<i class="fa fa-sign-out"></i></a></li>
 		</ul>
 	</nav>
 

@@ -13,8 +13,12 @@
 
 Route::get('/', 'User\HomeController@index');
 
-Route::get('/login', function(){
-	return view('layouts.auth.login');
+Route::get('/login', 'Auth\AuthController@showLoginForm')->name('login');
+Route::post('/login', 'Auth\AuthController@login')->name('login.submit');
+Route::get('/logout', 'Auth\AuthController@logout')->name('logout');
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
+	Route::get('/dashboard', 'Admin\AdminController@dashboard')->name('admin.dashboard');
 });
 
 Route::get('/contact', 'User\HomeController@contact');

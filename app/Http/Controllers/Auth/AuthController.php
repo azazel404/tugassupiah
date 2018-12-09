@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
 use App\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
 
 class AuthController extends Controller
 {
 	//fungsi untuk menampilkan form login
-	public function FunctionName()
+	public function showLoginForm()
 	{
 		return view('layouts.auth.login');
 	}
@@ -19,9 +21,15 @@ class AuthController extends Controller
     {
     	$credential = ["email" => $req->email, "password" => $req->password];
     	if (Auth::guard('admin')->attempt($credential)) {
-    		return "berhasil login admin";
+    		return redirect()->route('admin.dashboard');
     	}
-    	return "email atau password salah";
+    	return back()->with('error', 'wrong email or password');
 
+    }
+
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect()->route('login');
     }
 }

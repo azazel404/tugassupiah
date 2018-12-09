@@ -8,13 +8,19 @@
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
+      @if(Session::has('error'))
+        <div class="alert alert-danger">
+          {{ Session::get('error') }}
+        </div>
+      @endif
 
-      <form action="../../index2.html" method="post">
+      <form action="{{ route('login.submit') }}" method="post">
+        @csrf
         <div class="form-group has-feedback">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" class="form-control" placeholder="Email" name="email">
         </div>
         <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" placeholder="Password" name="password">
         </div>
         <div class="row">
           <div class="col-8">

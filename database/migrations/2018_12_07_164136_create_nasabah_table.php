@@ -22,6 +22,7 @@ class CreateNasabahTable extends Migration
             $table->text('address')->nullable();
             $table->string('token', 64)->unique()->nullable();
             $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -19,6 +19,7 @@ class CreateAdminTable extends Migration
             $table->string('email');
             $table->string('password');
             $table->boolean('is_super_admin');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
