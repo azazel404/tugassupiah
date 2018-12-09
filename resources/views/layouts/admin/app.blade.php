@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker-bs3.css') }}">
 	<!-- Google Font: Source Sans Pro -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
+	@yield('stylesheet')
 </head>
 <body>
 
@@ -220,5 +220,6 @@
 	<script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>
 	<!-- AdminLTE App -->
 	<script src="{{ asset('js/adminlte.js') }}"></script>
+	@yield('script')
 </body>
 </html>
