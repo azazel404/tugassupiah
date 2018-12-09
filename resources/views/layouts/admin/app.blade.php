@@ -82,7 +82,7 @@
 	          <!-- Add icons to the links using the .nav-icon class
 	          	with font-awesome or any other icon font library -->
 	          	<li class="nav-item">
-	          		<a href="pages/widgets.html" class="nav-link">
+	          		<a href="{{ route('admin.marketing') }}" class="nav-link">
 	          			<i class="nav-icon fa fa-th"></i>
 	          			<p>
 	          				Marketing

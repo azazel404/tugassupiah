@@ -34,26 +34,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 			Route::get('/banned/{id}', 'Admin\AdminController@bannedAdminAccount')->name('admin.manage-account.admin.banned');
 		});
 	});
+
+	Route::group(['prefix' => 'marketing'], function(){
+		Route::get('/', 'Admin\MarketingController@index')->name('admin.marketing');
+		Route::get('/add', 'Admin\MarketingController@addMarketing')->name('admin.marketing.add');
+		Route::post('/create', 'Admin\MarketingController@createMarketing')->name('admin.marketing.create');
+
+		Route::get('/edit/{id}', 'Admin\MarketingController@editMarketing')->name('admin.marketing.edit');
+		Route::post('/update/{id}', 'Admin\MarketingController@updateMarketing')->name('admin.marketing.update');
+
+		Route::get('/delete/{id}', 'Admin\MarketingController@deleteMarketing')->name('admin.marketing.delete');
+	});
 });
 
-Route::get('/contact', 'User\HomeController@contact');
-Route::get('/profile-perusahaan', 'User\HomeController@profile');
-Route::get('/suku-bunga', 'User\HomeController@sukuBunga');
-Route::get('/fitur-layanan', 'User\HomeController@service');
-
-Route::get('/admin', 'Admin\AdminController@dashboard');
-
-Route::get('/admin/marketing', 'Admin\AdminController@marketing');
-Route::get('/admin/marketing/edit', 'Admin\AdminController@editMarketing');
-
-Route::get('/admin/suku-bunga', 'Admin\AdminController@sukuBunga');
-Route::get('/admin/suku-bunga/edit', 'Admin\AdminController@editSukuBunga');
-
-Route::get('/admin/category', 'Admin\AdminController@category');
-Route::get('/admin/category/edit', 'Admin\AdminController@editCategory');
-
-Route::get('/admin/pengaduan', 'Admin\AdminController@pengaduan');
-Route::get('/admin/pengajuan', 'Admin\AdminController@pengajuan');
-
-Route::get('/admin/nasabah', 'Admin\AdminController@nasabah');
-Route::get('/admin/nasabah/add', 'Admin\AdminController@addNasabah');

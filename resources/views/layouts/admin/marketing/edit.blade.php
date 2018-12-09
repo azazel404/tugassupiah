@@ -25,23 +25,20 @@
 			<div class="col-md-6 col-12">
 				<div class="card">
 					<div class="card-header">
-						<span class="font-weight-light" style="font-size: 20px;">Edit @{{ nama marketing }}</span> <a href="#" class="btn btn-primary float-right">Simpan</a>
+						<span class="font-weight-light" style="font-size: 20px;">Edit <span class="font-weight-normal">{{ $marketing->name }}</span></span> <button form="editMarketing" type="submit" class="btn btn-primary float-right">Simpan</button>
 					</div>
 					<div class="card-body">
-						<form>
+						<form id="editMarketing" action="{{ route('admin.marketing.update', $marketing->id) }}" method="post">
+							@csrf
 							<div class="form-row">
 								<div class="form-group col">
 									<label>Name</label>
-									<input type="text" name="name" class="form-control" placeholder="Uzumaki naruto">
+									<input type="text" name="name" class="form-control" placeholder="Uzumaki naruto" value="{{ $marketing->name }}">
 								</div>
 								<div class="form-group col">
-									<label>Contact</label>
-									<input type="text" name="contact" class="form-control" placeholder="098767890 / uzumaki@gmail.com">
+									<label>Telepon</label>
+									<input type="text" name="telepon" class="form-control" placeholder="098767890 / uzumaki@gmail.com" value="{{ $marketing->telepon }}">
 								</div>
-							</div>
-							<div class="form-group">
-								<label>Address</label>
-								<textarea cols="4" rows="8" class="form-control" placeholder="alamt nya"></textarea>
 							</div>
 						</form>
 					</div>
