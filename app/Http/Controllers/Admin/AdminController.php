@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Hash;
+use App\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminAccountRequest;
 
 class AdminController extends Controller
 {
@@ -13,57 +16,60 @@ class AdminController extends Controller
     	return view('layouts.admin.dashboard');
     }
 
-    public function marketing()
-    {
-    	return view('layouts.admin.marketing.list');
-    }
-
-    public function editMarketing($value='')
-    {
-    	return view('layouts.admin.marketing.edit');
-    }
-
-    public function sukuBunga()
-    {
-    	return view('layouts.admin.sukuBunga.list');
-    }
-
-    public function editSukuBunga()
-    {
-    	return view('layouts.admin.sukuBunga.edit');
-    }
-
-    public function category()
-    {
-    	return view('layouts.admin.category.list');
-    }
-
-    public function editCategory()
-    {
-    	return view('layouts.admin.category.edit');
-    }
-
-    public function pengaduan()
-    {
-    	return view('layouts.admin.pengaduan.list');
-    }
-    public function pengajuan()
-    {
-    	return view('layouts.admin.pengajuan.list');
-    }
-
-    public function nasabah()
-    {
-    	return view('layouts.admin.nasabah.list');
-    }
-
-    public function addNasabah()
-    {
-    	return view('layouts.admin.nasabah.add');
-    }
-
     public function adminAccount()
     {
-        return view('layouts.admin.adminAccount.list');
+        $admin = Admin::orderBy('name', 'asc')->paginate(18);
+        return view('layouts.admin.adminAccount.list', ['admins' => $admin]);
+    }
+
+    public function addAdminAccount()
+    {
+        
+        return view('layouts.admin.adminAccount.add');
+    }
+
+    public function createAdminAccount(AdminAccountRequest $req)
+    {
+        $admin = new Admin;
+        $admin->name = $req->name;
+        $admin->email = $req->email;
+        
+        if ($req->password != $req->retype_password) {
+            return back()->with('error', 'password tidak sama');
+        }
+
+        $admin->password = Hash::make($req->password);
+        $admin->is_super_admin = false;
+        $admin->is_active = true;
+        
+        if (!$admin->save()) {
+            return back()->with('error', 'something went wrong');
+        }
+
+        return redirect()->route('admin.manage-account.admin');
+    }
+
+    public function bannedAdminAccount($id)
+    {
+        $admin = Admin::find($id);
+        $admin->is_active = false;
+
+        if(!$admin->save()) {
+            return back()->with('error', 'something went wrong');
+        }
+
+        return back()->with('message', 'akun ' . $admin->email . ' telah dibanned');
+    }
+
+    public function activateAdminAccount($id)
+    {
+        $admin = Admin::find($id);
+        $admin->is_active = true;
+
+        if(!$admin->save()) {
+            return back()->with('error', 'something went wrong');
+        }
+
+        return back()->with('message', 'akun ' . $admin->email . ' telah diaktifkan');
     }
 }

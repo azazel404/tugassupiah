@@ -21,7 +21,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 	Route::get('/dashboard', 'Admin\AdminController@dashboard')->name('admin.dashboard');
 
 	Route::group(['prefix' => 'manage-account'], function(){
-		Route::get('/admin', 'Admin\AdminController@adminAccount');
+		Route::group(['prefix' => 'admin'], function(){
+			Route::get('/', 'Admin\AdminController@adminAccount')->name('admin.manage-account.admin');
+			Route::get('/add', 'Admin\AdminController@addAdminAccount')->name('admin.manage-account.admin.add');
+			Route::post('/create', 'Admin\AdminController@createAdminAccount')->name('admin.manage-account.admin.create');
+
+			Route::get('/activate/{id}', 'Admin\AdminController@activateAdminAccount')->name('admin.manage-account.admin.activate');
+			Route::get('/banned/{id}', 'Admin\AdminController@bannedAdminAccount')->name('admin.manage-account.admin.banned');
+		});
 	});
 });
 

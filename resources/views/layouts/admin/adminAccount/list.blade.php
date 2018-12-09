@@ -22,9 +22,18 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12 col-12">
+				@if(Session::has('message'))
+					<div class="alert alert-success">
+						{{ Session::get('message') }}
+					</div>
+				@elseif(Session::has('error'))
+					<div class="alert alert-success">
+						{{ Session::get('error') }}
+					</div>
+				@endif
 				<div class="card">
 					<div class="card-header">
-						<a href="#" class="btn btn-primary float-right">+ add new</a>
+						<a href="{{ route('admin.manage-account.admin.add') }}" class="btn btn-primary float-right">+ add new</a>
 					</div>
 					<div class="card-body">
 						<table class="table table-striped">
@@ -33,21 +42,43 @@
 									<th>No</th>
 									<th>Name</th>
 									<th>Email</th>
+									<th>Super Admin</th>
+									<th>Aktif</th>
 									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>1.</td>
-									<td>Admin</td>
-									<td>admin@email.com</td>
-									<td>
-										<div class="btn-group">
-											<a href="#" class="btn btn-outline-primary">Edit</a>
-											<a href="#" class="btn btn-outline-danger">delete</a>
-										</div>
-									</td>
-								</tr>
+								@foreach($admins as $key => $admin)
+									<tr>
+										<td>{{ $key+1 }}</td>
+										<td>{{ $admin->name }}</td>
+										<td>{{ $admin->email }}</td>
+										<td>
+											@if($admin->is_super_admin)
+												<span class="badge badge-success">YES</span>
+											@else
+												<span class="badge badge-danger">NO</span>
+											@endif
+										</td>
+										<td>
+											@if($admin->is_active)
+												<span class="badge badge-success">YES</span>
+											@else
+												<span class="badge badge-danger">NO</span>
+											@endif
+										</td>
+										<td>
+											<div class="btn-group">
+												<a href="#" class="btn btn-outline-primary">Edit</a>
+												@if($admin->is_active)
+													<a href="{{ route('admin.manage-account.admin.banned', $admin->id) }}" class="btn btn-danger">Banned</a>
+												@else
+													<a href="{{ route('admin.manage-account.admin.activate', $admin->id) }}" class="btn btn-success">Aktifkan</a>
+												@endif
+											</div>
+										</td>
+									</tr>
+								@endforeach
 							</tbody>
 						</table>
 					</div>
