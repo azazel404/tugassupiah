@@ -19,6 +19,10 @@ Route::get('/logout', 'Auth\AuthController@logout')->name('logout');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 	Route::get('/dashboard', 'Admin\AdminController@dashboard')->name('admin.dashboard');
+
+	Route::group(['prefix' => 'manage-account'], function(){
+		Route::get('/admin', 'Admin\AdminController@adminAccount');
+	});
 });
 
 Route::get('/contact', 'User\HomeController@contact');

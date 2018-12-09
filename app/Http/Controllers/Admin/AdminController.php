@@ -61,4 +61,9 @@ class AdminController extends Controller
     {
     	return view('layouts.admin.nasabah.add');
     }
+
+    public function adminAccount()
+    {
+        return view('layouts.admin.adminAccount.list');
+    }
 }

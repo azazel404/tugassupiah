@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Admin | Bpr Pundi</title>
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}">
 	<!-- Ionicons -->
