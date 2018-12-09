@@ -55,12 +55,25 @@ class AdminController extends Controller
         return view('layouts.admin.adminAccount.edit', ['admin' => $admin]);
     }
 
+    public function updateAdminAccount(AdminAccountRequest $req, $id)
+    {
+        $admin = Admin::find($id);
+        $admin->name = $req->name;
+        $admin->email = $req->email;
+
+        if (!$admin->save()) {
+            return back()->with('error', 'something went wrong');
+        }
+
+        return redirect()->route('admin.manage-account.admin');
+    }
+
     public function bannedAdminAccount($id)
     {
         $admin = Admin::find($id);
         $admin->is_active = false;
 
-        if(!$admin->save()) {
+        if(!$admin->save() || $admin->is_super_admin == true) {
             return back()->with('error', 'something went wrong');
         }
 
@@ -72,7 +85,7 @@ class AdminController extends Controller
         $admin = Admin::find($id);
         $admin->is_active = true;
 
-        if(!$admin->save()) {
+        if(!$admin->save() || $admin->is_super_admin == true) {
             return back()->with('error', 'something went wrong');
         }
 

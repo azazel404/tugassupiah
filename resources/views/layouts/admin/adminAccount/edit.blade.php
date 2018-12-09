@@ -25,24 +25,19 @@
 			<div class="col-md-6 col-12">
 				<div class="card">
 					<div class="card-header">
-						<span class="font-weight-light" style="font-size: 20px;">Edit Admin</span> <a href="#" class="btn btn-primary float-right">Simpan</a>
+						<span class="font-weight-light" style="font-size: 20px;">Edit Admin</span> <button form="editAdmin" type="submit" class="btn btn-primary float-right">Simpan</button>
 					</div>
 					<div class="card-body">
-						<form>
+						<form id="editAdmin" action="{{ route('admin.manage-account.admin.update', $admin->id) }}" method="post">
+							@csrf
 							<div class="form-row">
 								<div class="form-group col">
 									<label>Nama admin</label>
-									<input type="text" name="name" class="form-control" placeholder="*jeremy">
+									<input type="text" name="name" class="form-control" placeholder="*jeremy" value="{{ $admin->name }}">
 								</div>
 								<div class="form-group col">
 									<label>Email</label>
-									<input type="text" name="name" class="form-control" placeholder="*email@email.com">
-								</div>
-							</div>
-							<div class="form-row">
-								<div class="form-group col">
-									<label>Password</label>
-									<input type="password" name="name" class="form-control" placeholder="******">
+									<input type="text" name="email" class="form-control" placeholder="*email@email.com" value="{{ $admin->email }}">
 								</div>
 							</div>
 						</form>

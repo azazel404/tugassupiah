@@ -26,7 +26,7 @@ class AdminAccountRequest extends FormRequest
         return [
             "name"              => "required|string|max:120",
             "email"             => "required|email|max:120",
-            "password"          => "required|string|max:120",
+            // "password"          => "required|string|max:120",
         ];
     }
 }

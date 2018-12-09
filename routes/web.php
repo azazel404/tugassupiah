@@ -28,6 +28,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 			Route::post('/create', 'Admin\AdminController@createAdminAccount')->name('admin.manage-account.admin.create');
 
 			Route::get('/edit/{id}', 'Admin\AdminController@editAdminAccount')->name('admin.manage-account.admin.edit');
+			Route::post('/update/{id}', 'Admin\AdminController@updateAdminAccount')->name('admin.manage-account.admin.update');
 
 			Route::get('/activate/{id}', 'Admin\AdminController@activateAdminAccount')->name('admin.manage-account.admin.activate');
 			Route::get('/banned/{id}', 'Admin\AdminController@bannedAdminAccount')->name('admin.manage-account.admin.banned');
