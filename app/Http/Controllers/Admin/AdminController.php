@@ -49,6 +49,12 @@ class AdminController extends Controller
         return redirect()->route('admin.manage-account.admin');
     }
 
+    public function editAdminAccount($id)
+    {
+        $admin = Admin::find($id);
+        return view('layouts.admin.adminAccount.edit', ['admin' => $admin]);
+    }
+
     public function bannedAdminAccount($id)
     {
         $admin = Admin::find($id);

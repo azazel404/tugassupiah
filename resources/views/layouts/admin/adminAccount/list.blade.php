@@ -69,11 +69,13 @@
 										</td>
 										<td>
 											<div class="btn-group">
-												<a href="#" class="btn btn-outline-primary">Edit</a>
-												@if($admin->is_active)
-													<a href="{{ route('admin.manage-account.admin.banned', $admin->id) }}" class="btn btn-danger">Banned</a>
-												@else
-													<a href="{{ route('admin.manage-account.admin.activate', $admin->id) }}" class="btn btn-success">Aktifkan</a>
+												@if(!$admin->is_super_admin)
+													<a href="{{ route('admin.manage-account.admin.edit', $admin->id) }}" class="btn btn-outline-primary">Edit</a>
+													@if($admin->is_active)
+														<a href="{{ route('admin.manage-account.admin.banned', $admin->id) }}" class="btn btn-danger">Banned</a>
+													@else
+														<a href="{{ route('admin.manage-account.admin.activate', $admin->id) }}" class="btn btn-success">Aktifkan</a>
+													@endif
 												@endif
 											</div>
 										</td>
