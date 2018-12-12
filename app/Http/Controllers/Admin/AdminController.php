@@ -24,7 +24,7 @@ class AdminController extends Controller
 
     public function addAdminAccount()
     {
-        
+
         return view('layouts.admin.adminAccount.add');
     }
 
@@ -33,7 +33,7 @@ class AdminController extends Controller
         $admin = new Admin;
         $admin->name = $req->name;
         $admin->email = $req->email;
-        
+
         if ($req->password != $req->retype_password) {
             return back()->with('error', 'password tidak sama');
         }
@@ -41,7 +41,7 @@ class AdminController extends Controller
         $admin->password = Hash::make($req->password);
         $admin->is_super_admin = false;
         $admin->is_active = true;
-        
+
         if (!$admin->save()) {
             return back()->with('error', 'something went wrong');
         }

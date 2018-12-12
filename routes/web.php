@@ -60,4 +60,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 			Route::get('/delete/{id}', 'Admin\CategoryController@deleteCategoryItem')->name('admin.category.item.delete');
 		});
 	});
+
+	Route::group(['prefix' => 'content'], function(){
+		Route::get('/add', 'Admin\ContentController@addContent')->name('admin.content');
+	});
+
+	Route::post('/upload-image', 'Api\ImageUploadController@uploadImage');
 });
