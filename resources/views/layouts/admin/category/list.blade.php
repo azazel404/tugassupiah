@@ -5,12 +5,12 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0 text-dark">Suku Bunga</h1>
+				<h1 class="m-0 text-dark">Kategori</h1>
 			</div><!-- /.col -->
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-					<li class="breadcrumb-item active">Suku Bunga</li>
+					<li class="breadcrumb-item active">Kategori</li>
 				</ol>
 			</div><!-- /.col -->
 		</div><!-- /.row -->
@@ -37,23 +37,58 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>1.</td>
-									<td>Produk</td>
-									<td>2000-29-9</td>
-									<td>
-										<div class="btn-group">
-											<a href="#" class="btn btn-outline-primary">Edit</a>
-											<a href="#" class="btn btn-outline-danger">delete</a>
-										</div>
-									</td>
-								</tr>
+								@foreach($categories as $key => $category)
+									<tr>
+										<td>{{ $key+1 }}</td>
+										<td>{{ $category->name }}</td>
+										<td>{{ $category->created_at }}</td>
+										<td>
+											<div class="btn-group">
+												<a href="{{ route('admin.category.edit', $category->id) }}" class="btn btn-outline-primary">Edit</a>
+												<a href="javascript:void(0)" id="btnDeleteCategory" class="btn btn-outline-danger" data-id="{{ $category->id }}">Delete</a>
+											</div>
+										</td>
+									</tr>
+								@endforeach
 							</tbody>
 						</table>
+						{{ $categories->links() }}
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalDeleteCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hapus Kategori</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Jika anda menghapus kategori ini, maka konten - konten yang menggunakan kategori ini akan ikut terhapus. <br>
+		apakah anda yakin ingin menghapus ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a id="deleteCategory" href="" class="btn btn-danger">Hapus</a>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
+
+@section('script')
+<script type="text/javascript">
+	$(document).on('click', '#btnDeleteCategory', function(){
+		$('#deleteCategory').attr('href', '/admin/category/delete/' + $(this).data('id'));
+		$('#modalDeleteCategory').modal('show');
+	})
+</script>
 @endsection

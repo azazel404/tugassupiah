@@ -25,10 +25,16 @@
 			<div class="col-md-6 col-12">
 				<div class="card">
 					<div class="card-header">
-						<span class="font-weight-light" style="font-size: 20px;">Tambah kategori</span> <a href="#" class="btn btn-primary float-right">Simpan</a>
+						<span class="font-weight-light" style="font-size: 20px;">Tambah kategori</span> <button form="addCategory" type="submit" class="btn btn-primary float-right">Simpan</button>
 					</div>
 					<div class="card-body">
-						<form>
+						@if(Session::has('error'))
+							<div class="alert alert-danger">
+								{{ Session::get('error') }}
+							</div>
+						@endif
+						<form id="addCategory" action="{{ route('admin.category.create') }}" method="post">
+							@csrf
 							<div class="form-row">
 								<div class="form-group col">
 									<label>Nama Kategori</label>

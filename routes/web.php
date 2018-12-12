@@ -23,7 +23,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 	Route::group(['prefix' => 'manage-account'], function(){
 		Route::group(['prefix' => 'admin'], function(){
 			Route::get('/', 'Admin\AdminController@adminAccount')->name('admin.manage-account.admin');
-			
+
 			Route::get('/add', 'Admin\AdminController@addAdminAccount')->name('admin.manage-account.admin.add');
 			Route::post('/create', 'Admin\AdminController@createAdminAccount')->name('admin.manage-account.admin.create');
 
@@ -45,5 +45,19 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 
 		Route::get('/delete/{id}', 'Admin\MarketingController@deleteMarketing')->name('admin.marketing.delete');
 	});
-});
 
+	Route::group(['prefix' => 'category'], function(){
+		Route::get('/', 'Admin\CategoryController@index')->name('admin.category');
+		Route::get('/add', 'Admin\CategoryController@addCategory')->name('admin.category.add');
+		Route::post('/create', 'Admin\CategoryController@createCategory')->name('admin.category.create');
+		Route::get('/edit/{id}', 'Admin\CategoryController@editCategory')->name('admin.category.edit');
+		Route::post('/update/{id}', 'Admin\CategoryController@updateCategory')->name('admin.category.update');
+		Route::get('/delete/{id}', 'Admin\CategoryController@deleteCategory')->name('admin.category.delete');
+
+		Route::group(['prefix' => 'item'], function(){
+			Route::post('/create', 'Admin\CategoryController@createCategoryItem')->name('admin.category.item.create');
+			Route::post('/update', 'Admin\CategoryController@updateCategoryItem')->name('admin.category.item.update');
+			Route::get('/delete/{id}', 'Admin\CategoryController@deleteCategoryItem')->name('admin.category.item.delete');
+		});
+	});
+});
