@@ -70,5 +70,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 		Route::get('/delete/{id}', 'Admin\ContentController@deleteContent')->name('admin.content.delete');
 	});
 
+	Route::group(['prefix' => 'pengaduan'], function(){
+		Route::get('/', 'Admin\PengaduanController@index')->name('admin.pengaduan');
+		Route::get('/delete/{id}', 'Admin\PengaduanController@deletePengaduan');
+	});
+
 	Route::post('/upload-image', 'Api\ImageUploadController@uploadImage');
 });

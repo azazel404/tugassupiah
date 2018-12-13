@@ -98,7 +98,7 @@
 	          		</a>
 	          	</li>
 	          	<li class="nav-item">
-	          		<a href="#" class="nav-link">
+	          		<a href="{{ route('admin.content') }}" class="nav-link">
 	          			<i class="nav-icon fa fa-tree"></i>
 	          			<p>
 	          				Content
@@ -115,7 +115,7 @@
 	          	</li>
 	          <li class="nav-header">Management Keluhan</li>
 	          	<li class="nav-item has-treeview">
-	          		<a href="#" class="nav-link">
+	          		<a href="{{ route('admin.pengaduan') }}" class="nav-link">
 	          			<i class="nav-icon fa fa-table"></i>
 	          			<p>
 	          				Pengaduan
