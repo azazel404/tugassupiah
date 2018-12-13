@@ -25,24 +25,37 @@
 			<div class="col-md-12 col-12">
 				<div class="card">
 					<div class="card-header">
-						<span class="font-weight-light" style="font-size: 20px;">Tambah konten</span> <button form="addMarketing" type="submit" class="btn btn-primary float-right">Simpan</button>
+						<span class="font-weight-light" style="font-size: 20px;">Tambah konten</span> <button form="addContent" type="submit" class="btn btn-primary float-right">Simpan</button>
 					</div>
 					<div class="card-body">
-						<form id="addMarketing" action="{{ route('admin.marketing.create') }}" method="post">
+						@if(Session::has('error'))
+							<div class="alert alert-danger">
+								{{ Session::get('error') }}
+							</div>
+						@endif
+						<form id="addContent" action="{{ route('admin.content.create') }}" method="post" enctype="multipart/form-data">
 							@csrf
 							<div class="form-row">
 								<div class="form-group col">
 									<label>Judul</label>
-									<input type="text" name="name" class="form-control" placeholder="Uzumaki naruto">
+									<input type="text" name="title" class="form-control" placeholder="Uzumaki naruto">
 								</div>
 								<div class="form-group col">
 									<label>Cover gambar</label>
-									<input type="text" name="telepon" class="form-control" placeholder="098767890 / uzumaki@gmail.com">
+									<input type="file" name="cover" class="form-control">
 								</div>
+							</div>
+							<div class="form-group">
+								<label>Kategori</label>
+								<select class="form-control" name="category_item_id">
+									@foreach($category_items as $category_item)
+										<option value="{{ $category_item->id }}">{{ $category_item->name }}</option>
+									@endforeach
+								</select>
 							</div>
                             <div class="form-group">
                                 <label>Konten</label>
-                                <textarea id="content">Hello, World!</textarea>
+                                <textarea id="content" name="content">Hello, World!</textarea>
                             </div>
 						</form>
 					</div>

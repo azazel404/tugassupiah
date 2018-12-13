@@ -63,6 +63,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 
 	Route::group(['prefix' => 'content'], function(){
 		Route::get('/add', 'Admin\ContentController@addContent')->name('admin.content');
+		Route::post('/create', 'Admin\ContentController@createContent')->name('admin.content.create');
 	});
 
 	Route::post('/upload-image', 'Api\ImageUploadController@uploadImage');
