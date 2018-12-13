@@ -11,6 +11,12 @@ use App\Http\Requests\ContentRequest;
 class ContentController extends Controller
 {
     //
+    public function index()
+    {
+        $content = Content::orderBy('created_at', 'desc')->paginate(18);
+        return view('layouts.admin.content.list', ['contents' => $content]);
+    }
+
     public function addContent()
     {
         $category_item = CategoryItem::orderBy('name', 'asc')->get();

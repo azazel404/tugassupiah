@@ -62,7 +62,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 	});
 
 	Route::group(['prefix' => 'content'], function(){
-		Route::get('/add', 'Admin\ContentController@addContent')->name('admin.content');
+		Route::get('/', 'Admin\ContentController@index')->name('admin.content');
+		Route::get('/add', 'Admin\ContentController@addContent')->name('admin.content.add');
 		Route::post('/create', 'Admin\ContentController@createContent')->name('admin.content.create');
 	});
 
