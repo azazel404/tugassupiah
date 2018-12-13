@@ -25,7 +25,7 @@ class ContentRequest extends FormRequest
     {
         return [
             "title" => "required|string|max:100",
-            "cover" => "required",
+            // "cover" => "required",
             "content" => "required|string|max:7000"
         ];
     }

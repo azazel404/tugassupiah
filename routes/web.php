@@ -65,6 +65,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 		Route::get('/', 'Admin\ContentController@index')->name('admin.content');
 		Route::get('/add', 'Admin\ContentController@addContent')->name('admin.content.add');
 		Route::post('/create', 'Admin\ContentController@createContent')->name('admin.content.create');
+		Route::get('/edit/{id}', 'Admin\ContentController@editContent')->name('admin.content.edit');
+		Route::post('/update/{id}', 'Admin\ContentController@updateContent')->name('admin.content.update');
+		Route::get('/delete/{id}', 'Admin\ContentController@deleteContent')->name('admin.content.delete');
 	});
 
 	Route::post('/upload-image', 'Api\ImageUploadController@uploadImage');
