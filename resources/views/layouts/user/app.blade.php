@@ -31,10 +31,10 @@
 					</li>
 					@foreach($categories as $category)
 						<li class="nav-item {{ ($category->categoryItem ? 'dropdown' : '') }}">
-							<a class="nav-link {{ ($category->categoryItem ? 'dropdown-toggle' : '') }}" href="#" id="{{ $category->id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="nav-link {{ (count($category->categoryItem) > 0 ? 'dropdown-toggle' : '') }}" href="#" id="{{ $category->id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								{{ $category->name }}
 							</a>
-							@if($category->categoryItem)
+							@if(count($category->categoryItem) > 0)
 								<div class="dropdown-menu" aria-labelledby="{{ $category->id }}">
 									@foreach($category->categoryItem as $category_item)
 										<a class="dropdown-item" href="#">{{ $category_item->name }}</a>

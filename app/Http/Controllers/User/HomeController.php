@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Category;
+use App\Marketing;
 use App\CategoryItem;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -22,7 +23,11 @@ class HomeController extends Controller
 
     public function contact()
     {
-    	return view('layouts.user.contact', ['categories' => $this->categories]);
+        $marketing = Marketing::all();
+    	return view('layouts.user.contact', [
+            'categories' => $this->categories,
+            'marketings' => $marketing
+        ]);
     }
 
     public function profile()
