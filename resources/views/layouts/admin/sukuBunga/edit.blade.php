@@ -25,18 +25,19 @@
 			<div class="col-md-6 col-12">
 				<div class="card">
 					<div class="card-header">
-						<span class="font-weight-light" style="font-size: 20px;">Edit @{{ nama suku bunga }}</span> <a href="#" class="btn btn-primary float-right">Simpan</a>
+						<span class="font-weight-light" style="font-size: 20px;">Edit {{ $sukuBunga->name }}</span> <a href="#" class="btn btn-primary float-right">Simpan</a>
 					</div>
 					<div class="card-body">
-						<form>
+						<form action="{{ route('admin.sukuBunga.update', $sukuBunga->id) }}" method="post">
+							@csrf
 							<div class="form-row">
 								<div class="form-group col">
 									<label>Nama</label>
-									<input type="text" name="name" class="form-control" placeholder="*kredit">
+									<input type="text" name="name" class="form-control" placeholder="*kredit" value="{{ $sukuBunga->name }}">
 								</div>
 								<div class="form-group col">
 									<label>Nilai</label>
-									<input type="text" name="contact" class="form-control" placeholder="2.0%">
+									<input type="text" name="contact" class="form-control" placeholder="2.0%" value="{{ $sukuBunga->value }}">
 								</div>
 							</div>
 						</form>

@@ -25,10 +25,11 @@
 			<div class="col-md-6 col-12">
 				<div class="card">
 					<div class="card-header">
-						<span class="font-weight-light" style="font-size: 20px;">Edit @{{ nama suku bunga }}</span> <a href="#" class="btn btn-primary float-right">Simpan</a>
+						<span class="font-weight-light" style="font-size: 20px;">Tambah Suku bunga</span> <button form="formSukuBunga" type="#" class="btn btn-primary float-right">Simpan</button>
 					</div>
 					<div class="card-body">
-						<form>
+						<form id="formSukuBunga" action="{{ route('admin.sukuBunga.create') }}" method="post">
+							@csrf
 							<div class="form-row">
 								<div class="form-group col">
 									<label>Nama</label>
@@ -36,7 +37,7 @@
 								</div>
 								<div class="form-group col">
 									<label>Nilai</label>
-									<input type="text" name="contact" class="form-control" placeholder="2.0%">
+									<input type="text" name="value" class="form-control" placeholder="2.0%">
 								</div>
 							</div>
 						</form>

@@ -24,7 +24,7 @@
 			<div class="col-md-12 col-12">
 				<div class="card">
 					<div class="card-header">
-						<a href="#" class="btn btn-primary float-right">+ add new</a>
+						<a href="{{ route('admin.sukuBunga.add') }}" class="btn btn-primary float-right">+ add new</a>
 					</div>
 					<div class="card-body">
 						<table class="table table-striped">
@@ -38,18 +38,20 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>1.</td>
-									<td>Kredit</td>
-									<td>20%</td>
-									<td>2000-29-9</td>
-									<td>
-										<div class="btn-group">
-											<a href="#" class="btn btn-outline-primary">Edit</a>
-											<a href="#" class="btn btn-outline-danger">delete</a>
-										</div>
-									</td>
-								</tr>
+								@foreach($sukuBungas as $key => $sukuBunga)
+									<tr>
+										<td>{{ $key+1 }}</td>
+										<td>{{ $sukuBunga->name }}</td>
+										<td>{{ $sukuBunga->value }}</td>
+										<td>{{ $sukuBunga->created_at }}</td>
+										<td>
+											<div class="btn-group">
+												<a href="{{ route('admin.sukuBunga.edit', $sukuBunga->id) }}" class="btn btn-outline-primary">Edit</a>
+												<a href="#" class="btn btn-outline-danger">delete</a>
+											</div>
+										</td>
+									</tr>
+								@endforeach
 							</tbody>
 						</table>
 					</div>

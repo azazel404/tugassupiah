@@ -91,5 +91,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 		Route::get('/delete/{id}', 'Admin\PengajuanController@deletePengajuan');
 	});
 
+	Route::group(['prefix' => 'suku-bunga'], function(){
+		Route::get('/', 'Admin\SukuBungaController@index')->name('admin.sukuBunga');
+		Route::get('/add', 'Admin\SukuBungaController@addSukuBunga')->name('admin.sukuBunga.add');
+		Route::post('/create', 'Admin\SukuBungaController@createSukuBunga')->name('admin.sukuBunga.create');
+		Route::get('/edit/{id}', 'Admin\SukuBungaController@editSukuBunga')->name('admin.sukuBunga.edit');
+		Route::post('/update/{id}', 'Admin\SukuBungaController@updateSukuBunga')->name('admin.sukuBunga.update');
+	});
+
 	Route::post('/upload-image', 'Api\ImageUploadController@uploadImage');
 });

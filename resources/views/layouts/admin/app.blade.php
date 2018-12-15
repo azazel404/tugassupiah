@@ -90,7 +90,7 @@
 	          		</a>
 	          	</li>
 	          	<li class="nav-item has-treeview">
-	          		<a href="#" class="nav-link">
+	          		<a href="{{ route('admin.sukuBunga') }}" class="nav-link">
 	          			<i class="nav-icon fa fa-pie-chart"></i>
 	          			<p>
 	          				Suku Bunga
@@ -106,7 +106,7 @@
 	          		</a>
 	          	</li>
 	          	<li class="nav-item has-treeview">
-	          		<a href="#" class="nav-link">
+	          		<a href="{{ route('admin.category') }}" class="nav-link">
 	          			<i class="nav-icon fa fa-edit"></i>
 	          			<p>
 	          				Category
