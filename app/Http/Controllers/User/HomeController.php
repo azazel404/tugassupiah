@@ -34,9 +34,4 @@ class HomeController extends Controller
     {
     	return view('layouts.user.sukuBunga', ['categories' => $this->categories]);
     }
-
-    public function service()
-    {
-    	return view('layouts.user.service', ['categories' => $this->categories]);
-    }
 }
