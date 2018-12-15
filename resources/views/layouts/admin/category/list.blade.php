@@ -24,7 +24,7 @@
 			<div class="col-md-12 col-12">
 				<div class="card">
 					<div class="card-header">
-						<a href="#" class="btn btn-primary float-right">+ add new</a>
+						<a href="{{ route('admin.category.add') }}" class="btn btn-primary float-right">+ add new</a>
 					</div>
 					<div class="card-body">
 						<table class="table table-striped">
