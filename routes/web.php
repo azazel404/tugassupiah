@@ -17,6 +17,16 @@ Route::get('/login', 'Auth\AuthController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\AuthController@login')->name('login.submit');
 Route::get('/logout', 'Auth\AuthController@logout')->name('logout');
 
+Route::get('/contact', 'User\HomeController@contact');
+Route::get('/profile', 'User\HomeController@profile');
+Route::get('/suku-bunga', 'User\HomeController@sukuBunga');
+
+Route::group(['prefix' => 'service'], function(){
+	Route::get('/', 'User\ServiceController@index');
+	Route::post('/pengaduan', 'User\ServiceController@createPengaduan');
+});
+
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 	Route::get('/dashboard', 'Admin\AdminController@dashboard')->name('admin.dashboard');
 

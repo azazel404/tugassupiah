@@ -5,25 +5,29 @@
 	<div class="row mt-5">
 		<div class="col-md-8 col-12">
 			<h1 class="font-weight-bold">Fitur Layanan</h1>
-			<form>
-				<div class="form-group">
-					<label>Perihal</label>
-					<select class="form-control">
-						<option>Pertanyaan</option>
-						<option>Pengajuan</option>
-						<option>Pertanyaan</option>
-					</select>
-				</div>	
 
+			<div class="alert alert-success">
+				<h5>test</h5>
+			</div>
+
+			<div class="form-group">
+				<label>Perihal</label>
+				<select id="slcPrihal" class="form-control" on>
+					<option value="1">Pengajuan</option>
+					<option value="2">Pertanyaan</option>
+				</select>
+			</div>
+
+			<form id="formPengaduan">
 				<div class="form-row">
 					<div class="form-group col">
 						<label>Nama</label>
 						<input type="text" name="name" class="form-control">
-					</div>	
+					</div>
 					<div class="form-group col">
 						<label>Email</label>
 						<input type="email" name="email" class="form-control">
-					</div>	
+					</div>
 				</div>
 
 				<div class="form-group">
@@ -33,7 +37,30 @@
 
 				<div class="form-group">
 					<label>Pesan</label>
-					<textarea cols="3" rows="8" class="form-control"></textarea>
+					<textarea cols="3" rows="8" name="message" class="form-control"></textarea>
+				</div>
+			</form>
+
+			<form id="formPengajuan">
+				<div class="form-row">
+					<div class="form-group col">
+						<label>Nama</label>
+						<input type="text" name="name" class="form-control">
+					</div>
+					<div class="form-group col">
+						<label>Email</label>
+						<input type="email" name="email" class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>No. Handphone</label>
+					<input type="number" name="phone" class="form-control">
+				</div>
+
+				<div class="form-group">
+					<label>Alamat</label>
+					<textarea cols="3" rows="8" name="address" class="form-control"></textarea>
 				</div>
 			</form>
 		</div>
@@ -94,4 +121,28 @@
 	</div>
 </div>
 
+@endsection
+
+@section('script')
+<script type="text/javascript">
+
+	$(document).on('change', '#slcPrihal', function(){
+		let opt = $('#slcPrihal').val()
+		if (opt == 1) {
+			showPengajuan()
+		}else if (opt == 2) {
+			showPengaduan()
+		}
+	})
+
+	function showPengajuan(){
+		$('#formPengajuan').show()
+		$('#formPengaduan').hide()
+	}
+
+	function showPengaduan(){
+		$('#formPengajuan').hide()
+		$('#formPengaduan').show()
+	}
+</script>
 @endsection

@@ -24,24 +24,25 @@
 						<a class="nav-link" href="#">Tentang Kami</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">News & Promo</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Produk
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Tabungan</a>
-							<a class="dropdown-item" href="#">Kredit</a>
-							<a class="dropdown-item" href="#">Deposito</a>
-						</div>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link" href="#">Fitur Layanan</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Hubungi Kami</a>
 					</li>
+					@foreach($categories as $category)
+						<li class="nav-item {{ ($category->categoryItem ? 'dropdown' : '') }}">
+							<a class="nav-link {{ ($category->categoryItem ? 'dropdown-toggle' : '') }}" href="#" id="{{ $category->id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								{{ $category->name }}
+							</a>
+							@if($category->categoryItem)
+								<div class="dropdown-menu" aria-labelledby="{{ $category->id }}">
+									@foreach($category->categoryItem as $category_item)
+										<a class="dropdown-item" href="#">{{ $category_item->name }}</a>
+									@endforeach
+								</div>
+							@endif
+						</li>
+					@endforeach
 				</ul>
 			</div>
 		</nav>
@@ -86,5 +87,6 @@
       	</div>
       </footer>
 	<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+	@yield('script')
 </body>
 </html>
