@@ -22,8 +22,9 @@ Route::get('/profile', 'User\HomeController@profile');
 Route::get('/suku-bunga', 'User\HomeController@sukuBunga');
 
 Route::group(['prefix' => 'service'], function(){
-	Route::get('/', 'User\ServiceController@index');
-	Route::post('/pengaduan', 'User\ServiceController@createPengaduan');
+	Route::get('/', 'User\ServiceController@index')->name('service');
+	Route::post('/pengaduan', 'User\ServiceController@createPengaduan')->name('service.pengaduan');
+	Route::post('/pengajuan', 'User\ServiceController@createPengajuan')->name('service.pengajuan');
 });
 
 
@@ -83,6 +84,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 	Route::group(['prefix' => 'pengaduan'], function(){
 		Route::get('/', 'Admin\PengaduanController@index')->name('admin.pengaduan');
 		Route::get('/delete/{id}', 'Admin\PengaduanController@deletePengaduan');
+	});
+
+	Route::group(['prefix' => 'pengajuan'], function(){
+		Route::get('/', 'Admin\PengajuanController@index')->name('admin.pengajuan');
+		Route::get('/delete/{id}', 'Admin\PengajuanController@deletePengajuan');
 	});
 
 	Route::post('/upload-image', 'Api\ImageUploadController@uploadImage');

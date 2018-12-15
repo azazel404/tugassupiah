@@ -6,19 +6,34 @@
 		<div class="col-md-8 col-12">
 			<h1 class="font-weight-bold">Fitur Layanan</h1>
 
-			<div class="alert alert-success">
-				<h5>test</h5>
-			</div>
+			@if(Session::has('message'))
+				<div class="alert alert-success">
+					<h4>{{ Session::get('message') }}</h4>
+				</div>
+			@elseif(Session::has('error'))
+				<div class="alert alert-danger">
+					<h4>{{ Session::get('error') }}</h4>
+				</div>
+			@endif
+
+			@if($errors->any())
+				<ul class="alert alert-danger">
+					@foreach($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			@endif
 
 			<div class="form-group">
 				<label>Perihal</label>
 				<select id="slcPrihal" class="form-control" on>
+					<option value="2">Pengaduan</option>
 					<option value="1">Pengajuan</option>
-					<option value="2">Pertanyaan</option>
 				</select>
 			</div>
 
-			<form id="formPengaduan">
+			<form id="formPengaduan" action="{{ route('service.pengaduan') }}" method="post">
+				@csrf
 				<div class="form-row">
 					<div class="form-group col">
 						<label>Nama</label>
@@ -32,16 +47,19 @@
 
 				<div class="form-group">
 					<label>No. Handphone</label>
-					<input type="number" name="phone" class="form-control">
+					<input type="number" name="telephone" class="form-control">
 				</div>
 
 				<div class="form-group">
 					<label>Pesan</label>
 					<textarea cols="3" rows="8" name="message" class="form-control"></textarea>
 				</div>
+
+				<button type="submit" class="btn btn-primary btn-block">Submit</button>
 			</form>
 
-			<form id="formPengajuan">
+			<form id="formPengajuan" action="{{ route('service.pengajuan') }}" method="post">
+				@csrf
 				<div class="form-row">
 					<div class="form-group col">
 						<label>Nama</label>
@@ -55,13 +73,15 @@
 
 				<div class="form-group">
 					<label>No. Handphone</label>
-					<input type="number" name="phone" class="form-control">
+					<input type="number" name="telephone" class="form-control">
 				</div>
 
 				<div class="form-group">
 					<label>Alamat</label>
 					<textarea cols="3" rows="8" name="address" class="form-control"></textarea>
 				</div>
+
+				<button type="submit" class="btn btn-primary btn-block">Submit</button>
 			</form>
 		</div>
 		<div class="col-md-4">
@@ -125,6 +145,10 @@
 
 @section('script')
 <script type="text/javascript">
+
+	$(document).ready(function(){
+		showPengaduan()
+	})
 
 	$(document).on('change', '#slcPrihal', function(){
 		let opt = $('#slcPrihal').val()
