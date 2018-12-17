@@ -52,4 +52,15 @@ class SukuBungaController extends Controller
 
         return redirect()->route('admin.sukuBunga');
     }
+
+    public function deleteSukuBunga($id)
+    {
+        $sukuBunga = SukuBunga::find($id);
+
+        if (!$sukuBunga->delete()) {
+            return back()->with('error', 'something went wrong');
+        }
+
+        return back();
+    }
 }

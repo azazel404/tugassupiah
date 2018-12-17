@@ -47,7 +47,7 @@
 										<td>
 											<div class="btn-group">
 												<a href="{{ route('admin.sukuBunga.edit', $sukuBunga->id) }}" class="btn btn-outline-primary">Edit</a>
-												<a href="#" class="btn btn-outline-danger">delete</a>
+												<a id="btnDeleteSukuBunga" href="javascript:void(0)" class="btn btn-outline-danger" data-id="{{ $sukuBunga->id }}">delete</a>
 											</div>
 										</td>
 									</tr>
@@ -60,4 +60,34 @@
 		</div>
 	</div>
 </section>
+
+<div class="modal fade" id="modalDeleteSukuBunga" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hapus Suku bunga</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4>Apakah kamu yakin ingin menghapus suku bunga ini ?</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+        <a id="deleteSukuBunga" href="" class="btn btn-danger">Hapus</a>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
+
+
+@section('script')
+<script type="text/javascript">
+	$(document).on('click', '#btnDeleteSukuBunga', function(){
+		$('#deleteSukuBunga').attr('href', '/admin/suku-bunga/delete/' + $(this).data('id'))
+		$('#modalDeleteSukuBunga').modal('show')
+	})
+</script>
 @endsection
