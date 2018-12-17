@@ -11,15 +11,15 @@
 |
 */
 
-Route::get('/', 'User\HomeController@index');
+Route::get('/', 'User\HomeController@index')->name('home');
 
 Route::get('/login', 'Auth\AuthController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\AuthController@login')->name('login.submit');
 Route::get('/logout', 'Auth\AuthController@logout')->name('logout');
 
-Route::get('/contact', 'User\HomeController@contact');
-Route::get('/profile', 'User\HomeController@profile');
-Route::get('/suku-bunga', 'User\HomeController@sukuBunga');
+Route::get('/contact', 'User\HomeController@contact')->name('contact');
+Route::get('/profile', 'User\HomeController@profile')->name('profile');
+Route::get('/suku-bunga', 'User\HomeController@sukuBunga')->name('sukubunga');
 
 Route::group(['prefix' => 'service'], function(){
 	Route::get('/', 'User\ServiceController@index')->name('service');

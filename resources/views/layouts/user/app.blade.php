@@ -11,7 +11,7 @@
 <body>
 	<div class="container-nav">
 		<nav class="mt-4 navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">
+			<a class="navbar-brand" href="{{route('home')}}">
 				<img src="{{ asset('img/logo_bprdn.png') }}" class="img-fluid">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,13 +21,10 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link" href="#">Tentang Kami</a>
+						<a class="nav-link" href="{{ route('profile') }}">Tentang Kami</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Fitur Layanan</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Hubungi Kami</a>
+						<a class="nav-link" href="{{ route('sukubunga') }}">Suku Bunga</a>
 					</li>
 					@foreach($categories as $category)
 						<li class="nav-item {{ ($category->categoryItem ? 'dropdown' : '') }}">
@@ -43,6 +40,12 @@
 							@endif
 						</li>
 					@endforeach
+					<li class="nav-item">
+						<a class="nav-link" href="#">Fitur Layanan</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ route('contact') }}">Hubungi Kami</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
@@ -59,7 +62,7 @@
 						<p>Alamat: Komp. Nagoya City Centre blok E No.12, Lubuk Baja,
 						Kota Batam, Kep. Riau</p>
 						<p>Telp: (0778) 429199</p>
-						<p>Email: <a href="mailto:ptbpragradhana@yahoo.co.id">ptbpragradhana@yahoo.co.id</a></p>
+						<p>Email: <a href="mailto:test@gmail.com">test@gmail.com</a></p>
 
 						<ul class="social-menu">
 							<li class="list-inline-item"><a href="#"><i class="fab fa-facebook-square facebook"></i></a></li>
