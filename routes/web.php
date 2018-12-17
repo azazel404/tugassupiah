@@ -19,6 +19,7 @@ Route::get('/logout', 'Auth\AuthController@logout')->name('logout');
 
 Route::get('/contact', 'User\HomeController@contact')->name('contact');
 Route::get('/profile', 'User\HomeController@profile')->name('profile');
+Route::get('/content/{slug}', 'HomeController@content')->name('content');
 Route::get('/suku-bunga', 'User\HomeController@sukuBunga')->name('sukubunga');
 
 Route::group(['prefix' => 'service'], function(){

@@ -4,8 +4,11 @@ namespace App\Http\Controllers\User;
 
 use App\Category;
 use App\Marketing;
+use App\SukuBunga;
+use App\Content;
 use App\CategoryItem;
 use Illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -37,6 +40,15 @@ class HomeController extends Controller
 
     public function sukuBunga()
     {
-    	return view('layouts.user.sukuBunga', ['categories' => $this->categories]);
+        $sukuBunga = SukuBunga::orderBy('name', 'asc')->paginate(18);
+        return view('layouts.user.sukuBunga', ['SukuBungas' => $sukuBunga,'categories' => $this->categories]);
+    	
+    }
+
+     public function content()
+    {
+        $content = Content::where('slug','=',$slug)->firstOrFail();
+        return view('layout.user.content', ['Contents' => $this->content]);
+    	
     }
 }

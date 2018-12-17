@@ -16,16 +16,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Tab. Dana Siswa</td>
-						<td>s/d 1.00%</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>Tab. Dana Vip</td>
-						<td>s/d 7.00%</td>
-					</tr>
+			@foreach($SukuBungas as $key => $sukuBunga)
+						<tr>
+							<td>{{ $key+1 }}</td>
+							<td>{{ $sukuBunga->name }}</td>
+							<td>{{ $sukuBunga->value }}</td>
+						</tr>
+			@endforeach
 				</tbody>
 			</table>
 		</div>
