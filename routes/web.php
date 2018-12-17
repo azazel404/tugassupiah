@@ -97,6 +97,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 		Route::post('/create', 'Admin\SukuBungaController@createSukuBunga')->name('admin.sukuBunga.create');
 		Route::get('/edit/{id}', 'Admin\SukuBungaController@editSukuBunga')->name('admin.sukuBunga.edit');
 		Route::post('/update/{id}', 'Admin\SukuBungaController@updateSukuBunga')->name('admin.sukuBunga.update');
+		Route::get('/delete/{id}', 'Admin\SukuBungaController@deleteSukuBunga')->name('admin.sukuBunga.delete');
 	});
 
 	Route::post('/upload-image', 'Api\ImageUploadController@uploadImage');

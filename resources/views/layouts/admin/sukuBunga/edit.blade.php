@@ -25,10 +25,10 @@
 			<div class="col-md-6 col-12">
 				<div class="card">
 					<div class="card-header">
-						<span class="font-weight-light" style="font-size: 20px;">Edit {{ $sukuBunga->name }}</span> <a href="#" class="btn btn-primary float-right">Simpan</a>
+						<span class="font-weight-light" style="font-size: 20px;">Edit {{ $sukuBunga->name }}</span> <button form="formEditSukuBunga" type="submit" class="btn btn-primary float-right">Simpan</button>
 					</div>
 					<div class="card-body">
-						<form action="{{ route('admin.sukuBunga.update', $sukuBunga->id) }}" method="post">
+						<form id="formEditSukuBunga" action="{{ route('admin.sukuBunga.update', $sukuBunga->id) }}" method="post">
 							@csrf
 							<div class="form-row">
 								<div class="form-group col">
@@ -37,7 +37,7 @@
 								</div>
 								<div class="form-group col">
 									<label>Nilai</label>
-									<input type="text" name="contact" class="form-control" placeholder="2.0%" value="{{ $sukuBunga->value }}">
+									<input type="text" name="value" class="form-control" placeholder="2.0%" value="{{ $sukuBunga->value }}">
 								</div>
 							</div>
 						</form>
@@ -47,4 +47,5 @@
 		</div>
 	</div>
 </section>
+
 @endsection
