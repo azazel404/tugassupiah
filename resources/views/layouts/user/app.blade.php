@@ -28,7 +28,7 @@
 					</li>
 					@foreach($categories as $category)
 						<li class="nav-item {{ ($category->categoryItem ? 'dropdown' : '') }}">
-							<a class="nav-link {{ (count($category->categoryItem) > 0 ? 'dropdown-toggle' : '') }}" href="#" id="{{ $category->id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="nav-link {{ (count($category->categoryItem) > 0 ? 'dropdown-toggle' : '') }}" href="{{ (count($category->categoryItem) > 0 ? '#' : route('content.category', $category->id)) }}" id="{{ $category->id }}" data-toggle="{{ (count($category->categoryItem) > 0 ? 'dropdown' : '') }}">
 								{{ $category->name }}
 							</a>
 							@if(count($category->categoryItem) > 0)

@@ -19,8 +19,10 @@ Route::get('/logout', 'Auth\AuthController@logout')->name('logout');
 
 Route::get('/contact', 'User\HomeController@contact')->name('contact');
 Route::get('/profile', 'User\CompanyProfileController@index')->name('profile');
-Route::get('/content/{slug}', 'HomeController@content')->name('content');
 Route::get('/suku-bunga', 'User\HomeController@sukuBunga')->name('sukubunga');
+Route::get('/content/c/{category_id}', 'User\ContentController@getContentByCategory')->name('content.category');
+Route::get('/content/s/{category_item_id}', 'User\ContentController@getContentByCategoryItem')->name('content.subCategory');
+Route::get('/content/d/{slug}', 'HomeController@content')->name('content');
 
 ROute::get('/content', 'User\HomeController@content');
 

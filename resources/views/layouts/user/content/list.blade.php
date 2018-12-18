@@ -3,29 +3,20 @@
 <div class="container">
 	<div class="row mt-5">
 		<div class="col-md-8 col-12">
-			<h1 class="font-weight-light">@{{ nama kategori }}</h1>
+			<h1 class="font-weight-light">{{ $categoryName }}</h1>
 
 			<div class="row mt-5">
-				<div class="col-md-6 col-12">
-					<div class="card">
-						<img class="card-img-top" src="{{ asset('img/simpel_danus.jpg') }}" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
+				@foreach($contents as $content)
+					<div class="col-md-6 col-12">
+						<div class="card">
+							<img class="card-img-top" src="{{ url('/storage/content/' . $content->cover)  }}" alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">{{ $content->title }}</h5>
+								<a href="#" class="btn btn-primary">Go somewhere</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-6 col-12">
-					<div class="card">
-						<img class="card-img-top" src="{{ asset('img/simpel_danus.jpg') }}" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
-						</div>
-					</div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 		<div class="col-md-4">
