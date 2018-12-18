@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Storage;
 use App\Content;
+use App\Category;
 use App\CategoryItem;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -20,8 +21,9 @@ class ContentController extends Controller
 
     public function addContent()
     {
-        $category_item = CategoryItem::orderBy('name', 'asc')->get();
-        return view('layouts.admin.content.add', ['category_items' => $category_item]);
+        $category = Category::orderBy('name', 'asc')->get();
+
+        return view('layouts.admin.content.add', ['categories' => $category,]);
     }
 
     public function createContent(ContentRequest $req)
@@ -30,6 +32,7 @@ class ContentController extends Controller
         $cover = $req->cover->store('public/cover');
         $content->title = $req->title;
         $content->slug = str_slug($req->title);
+        $content->category_id = $req->category_id;
         $content->category_item_id = $req->category_item_id;
         $content->cover = basename($cover);
         $content->content = $req->content;
@@ -53,6 +56,7 @@ class ContentController extends Controller
         $content = Content::find($id);
         $content->title = $req->title;
         $content->slug = str_slug($req->title);
+        $content->category_id = $req->category_id;
         $content->category_item_id = $req->category_item_id;
         $content->content = $req->content;
 

@@ -67,6 +67,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 		Route::get('/edit/{id}', 'Admin\CategoryController@editCategory')->name('admin.category.edit');
 		Route::post('/update/{id}', 'Admin\CategoryController@updateCategory')->name('admin.category.update');
 		Route::get('/delete/{id}', 'Admin\CategoryController@deleteCategory')->name('admin.category.delete');
+		Route::get('/json/{category_id}', 'Admin\CategoryController@getJsonCategoryItem')->name('admin.category.json');
 
 		Route::group(['prefix' => 'item'], function(){
 			Route::post('/create', 'Admin\CategoryController@createCategoryItem')->name('admin.category.item.create');

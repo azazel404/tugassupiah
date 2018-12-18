@@ -107,4 +107,23 @@ class CategoryController extends Controller
 
         return back();
     }
+
+    public function getJsonCategoryItem($category_id)
+    {
+        $category_item = CategoryItem::where('category_id', $category_id)->get();
+
+        if (!$category_item) {
+            return response()->json([
+                'message' => 'no category item',
+                'status' => 500,
+                'data' => []
+            ]);
+        }
+
+        return response()->json([
+            'message' => 'OKE',
+            'status' => 200,
+            'data' => $category_item
+        ]);
+    }
 }
