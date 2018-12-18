@@ -15,7 +15,8 @@ class CreateContentTable extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_item_id');
+            $table->integer('category_id');
+            $table->integer('category_item_id')->nullable();
             $table->string('title');
             $table->string('slug');
             $table->string('cover');
