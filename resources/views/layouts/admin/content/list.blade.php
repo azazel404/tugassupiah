@@ -32,7 +32,7 @@
 						<img class="card-img-top" src="{{ asset('storage/cover/') . '/' . $content->cover }}" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">{{ $content->title }}</h5>
-							<small class="text-grey">{{ $content->CategoryItem->name }} | {{ $content->created_at->diffForHumans() }}</small>
+							<small class="text-grey">{{ $content->category->name }} {{ (isset($content->CategoryItem->name) ? ' > ' . $content->CategoryItem->name : '') }} | {{ $content->created_at->diffForHumans() }}</small>
 							<br>
 							<a href="#" class="btn btn-info mt-3">Lihat</a>
 							<a href="{{ route('admin.content.edit', $content->id) }}" class="btn btn-primary mt-3">Edit</a>
