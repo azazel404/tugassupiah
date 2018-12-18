@@ -32,11 +32,15 @@
 								{{ Session::get('error') }}
 							</div>
 						@endif
-						<form id="addContent" action="{{ route('admin.content.update', $content->id) }}" method="post" enctype="multipart/form-data">
+						@if(Session::has('message'))
+							<div class="alert alert-success">
+								{{ Session::get('message') }}
+							</div>
+						@endif
+						<form id="addContent" action="{{ route('admin.profile.update') }}" method="post">
 							@csrf
                             <div class="form-group">
-                                <label>Konten</label>
-                                <textarea id="content" name="content">{{ $content->content }}</textarea>
+                                <textarea id="content" name="content">{{ $company_profile->content }}</textarea>
                             </div>
 						</form>
 					</div>

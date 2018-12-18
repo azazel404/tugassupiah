@@ -103,6 +103,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 
 	Route::group(['prefix' => 'profile'], function(){
 		Route::get('/edit', 'Admin\CompanyProfileController@editCompanyProfile')->name('admin.profile.edit');
+		Route::post('/update', 'Admin\CompanyProfileController@updateCompanyProfile')->name('admin.profile.update');
 	});
 
 	Route::post('/upload-image', 'Api\ImageUploadController@uploadImage');
