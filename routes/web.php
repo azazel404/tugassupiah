@@ -18,7 +18,7 @@ Route::post('/login', 'Auth\AuthController@login')->name('login.submit');
 Route::get('/logout', 'Auth\AuthController@logout')->name('logout');
 
 Route::get('/contact', 'User\HomeController@contact')->name('contact');
-Route::get('/profile', 'User\HomeController@profile')->name('profile');
+Route::get('/profile', 'User\CompanyProfileController@index')->name('profile');
 Route::get('/content/{slug}', 'HomeController@content')->name('content');
 Route::get('/suku-bunga', 'User\HomeController@sukuBunga')->name('sukubunga');
 
@@ -99,6 +99,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 		Route::get('/edit/{id}', 'Admin\SukuBungaController@editSukuBunga')->name('admin.sukuBunga.edit');
 		Route::post('/update/{id}', 'Admin\SukuBungaController@updateSukuBunga')->name('admin.sukuBunga.update');
 		Route::get('/delete/{id}', 'Admin\SukuBungaController@deleteSukuBunga')->name('admin.sukuBunga.delete');
+	});
+
+	Route::group(['prefix' => 'profile'], function(){
+		Route::get('/edit', 'Admin\CompanyProfileController@editCompanyProfile')->name('admin.profile.edit');
 	});
 
 	Route::post('/upload-image', 'Api\ImageUploadController@uploadImage');

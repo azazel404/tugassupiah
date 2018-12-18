@@ -5,7 +5,7 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class CompanyProfile extends Controller
+class CompanyProfileController extends Controller
 {
     //
 }
