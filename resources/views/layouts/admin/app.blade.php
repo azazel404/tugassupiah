@@ -113,6 +113,14 @@
 	          			</p>
 	          		</a>
 	          	</li>
+				<li class="nav-item has-treeview">
+	          		<a href="{{ route('admin.profile.edit') }}" class="nav-link">
+	          			<i class="nav-icon fa fa-edit"></i>
+	          			<p>
+	          				Profile Perusahaan
+	          			</p>
+	          		</a>
+	          	</li>
 	          <li class="nav-header">Management Keluhan</li>
 	          	<li class="nav-item has-treeview">
 	          		<a href="{{ route('admin.pengaduan') }}" class="nav-link">
