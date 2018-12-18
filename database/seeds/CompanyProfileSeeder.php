@@ -13,11 +13,7 @@ class CompanyProfileSeeder extends Seeder
     {
         //
         DB::table('company_profiles')->insert([
-            'name' => "admin",
-            'email' => 'admin@gmail.com',
-            'is_super_admin' => true,
-            'is_active' => true,
-            'password' => bcrypt('asus123'),
+            'content' => "<h1>Edit Tentang perusahaan kamu disini</h1>",
         ]);
     }
 }
