@@ -22,6 +22,8 @@ Route::get('/profile', 'User\CompanyProfileController@index')->name('profile');
 Route::get('/content/{slug}', 'HomeController@content')->name('content');
 Route::get('/suku-bunga', 'User\HomeController@sukuBunga')->name('sukubunga');
 
+ROute::get('/content', 'User\HomeController@content');
+
 Route::group(['prefix' => 'service'], function(){
 	Route::get('/', 'User\ServiceController@index')->name('service');
 	Route::post('/pengaduan', 'User\ServiceController@createPengaduan')->name('service.pengaduan');

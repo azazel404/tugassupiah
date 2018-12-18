@@ -42,13 +42,13 @@ class HomeController extends Controller
     {
         $sukuBunga = SukuBunga::orderBy('name', 'asc')->paginate(18);
         return view('layouts.user.sukuBunga', ['SukuBungas' => $sukuBunga,'categories' => $this->categories]);
-    	
+
     }
 
-     public function content()
+    public function content()
     {
-        $content = Content::where('slug','=',$slug)->firstOrFail();
-        return view('layout.user.content', ['Contents' => $this->content]);
-    	
+        // $content = Content::where('id','=',1)->firstOrFail();
+        return view('layouts.user.content', ['categories' => $this->categories]);
+
     }
 }
