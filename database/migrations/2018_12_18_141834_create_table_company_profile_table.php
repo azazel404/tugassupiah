@@ -13,7 +13,7 @@ class CreateTableCompanyProfileTable extends Migration
      */
     public function up()
     {
-        Schema::create('CompanyProfiles', function (Blueprint $table) {
+        Schema::create('company_profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->text('content');
             $table->timestamps();
