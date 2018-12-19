@@ -9,7 +9,7 @@
 				@foreach($contents as $content)
 					<div class="col-md-6 col-12">
 						<div class="card">
-							<img class="card-img-top" src="{{ url('/storage/content/' . $content->cover)  }}" alt="Card image cap">
+							<img class="card-img-top" src="{{ url('/storage/cover/' . $content->cover)  }}" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">{{ $content->title }}</h5>
 								<a href="#" class="btn btn-primary">Go somewhere</a>

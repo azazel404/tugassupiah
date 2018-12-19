@@ -34,7 +34,7 @@
 							@if(count($category->categoryItem) > 0)
 								<div class="dropdown-menu" aria-labelledby="{{ $category->id }}">
 									@foreach($category->categoryItem as $category_item)
-										<a class="dropdown-item" href="#">{{ $category_item->name }}</a>
+										<a class="dropdown-item" href="{{ route('content.subCategory', $category_item->id) }}">{{ $category_item->name }}</a>
 									@endforeach
 								</div>
 							@endif

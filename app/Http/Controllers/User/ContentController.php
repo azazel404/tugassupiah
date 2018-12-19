@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Content;
 use App\Category;
+use App\CategoryItem;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -30,10 +31,18 @@ class ContentController extends Controller
 
     public function getContentByCategoryItem($category_item_id)
     {
+        $category = CategoryItem::find($category_item_id);
         $content = Content::where('category_item_id', $category_item_id)->get();
         return view('layouts.user.content.list', [
+            'categoryName'  => $category->name,
             'contents'      => $content,
             'categories'    => $this->categories
         ]);
+    }
+
+    public function getDetailContent($id)
+    {
+        $content = Content::findOrFail($id);
+        return view('layouts.user.content.detail');
     }
 }
