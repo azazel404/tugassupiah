@@ -22,7 +22,7 @@ Route::get('/profile', 'User\CompanyProfileController@index')->name('profile');
 Route::get('/suku-bunga', 'User\HomeController@sukuBunga')->name('sukubunga');
 Route::get('/content/c/{category_id}', 'User\ContentController@getContentByCategory')->name('content.category');
 Route::get('/content/s/{category_item_id}', 'User\ContentController@getContentByCategoryItem')->name('content.subCategory');
-Route::get('/content/d/{slug}', 'HomeController@content')->name('content');
+Route::get('/content/d/{slug}', 'User\ContentController@getDetailContent')->name('content.detail');
 
 ROute::get('/content', 'User\HomeController@content');
 

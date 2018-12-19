@@ -40,9 +40,12 @@ class ContentController extends Controller
         ]);
     }
 
-    public function getDetailContent($id)
+    public function getDetailContent($slug)
     {
-        $content = Content::findOrFail($id);
-        return view('layouts.user.content.detail');
+        $content = Content::where('slug', $slug)->first();
+        return view('layouts.user.content.detail', [
+            'content' => $content, 
+            'categories'    => $this->categories
+        ]);
     }
 }
