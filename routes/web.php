@@ -24,7 +24,10 @@ Route::get('/content/c/{category_id}', 'User\ContentController@getContentByCateg
 Route::get('/content/s/{category_item_id}', 'User\ContentController@getContentByCategoryItem')->name('content.subCategory');
 Route::get('/content/d/{slug}', 'User\ContentController@getDetailContent')->name('content.detail');
 
-ROute::get('/content', 'User\HomeController@content');
+Route::get('/mobile/profile', 'User\MobileContentController@getCompanyProfile');
+Route::get('/mobile/product', 'User\MobileContentController@getAllProduct');
+Route::get('/mobile/d/{id}' , 'User\MobileContentController@getDetailContent')->name('mobile.content.detail');
+// ROute::get('/content', 'User\HomeController@content');
 
 Route::group(['prefix' => 'service'], function(){
 	Route::get('/', 'User\ServiceController@index')->name('service');

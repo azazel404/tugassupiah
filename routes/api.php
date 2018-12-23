@@ -22,3 +22,4 @@ Route::post('/login', 'Api\AuthController@login');
 Route::post('/pengaduan', 'Api\PengaduanController@createPengaduan');
 Route::post('/pengajuan', 'Api\PengajuanController@createPengajuan');
 Route::get('/suku-bunga', 'Api\SukuBungaController@getSukuBunga');
+Route::get('/profile', 'Api\CompanyProfileController@getCompanyProfile');
