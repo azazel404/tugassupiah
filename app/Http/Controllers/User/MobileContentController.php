@@ -19,7 +19,7 @@ class MobileContentController extends Controller
 
     public function getAllProduct()
     {
-        $category = Category::where('name', 'like', '%' . 'produk' . '%')->first();
+        $category = Category::where('name', 'like', '%' . 'prod' . '%')->first();
         // return $category;
         $content = Content::where('category_id', $category->id)->get();
 
