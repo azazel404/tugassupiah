@@ -54,36 +54,20 @@
 	<footer class="main-footer mt-9">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 mt-5">
+				<div class="col-md-12 mt-5" style="text-align:center">
 					<div class="logo">
-						<h4 class="">BPR Pondasi</h4>
+						<h4 class="">BPR Pondasi Niaga Perdana</h4>
 					</div>
 					<div class="contact-details">
-						<p>Alamat: Komp. Nagoya City Centre blok E No.12, Lubuk Baja,
-						Kota Batam, Kep. Riau</p>
-						<p>Telp: (0778) 429199</p>
-						<p>Email: <a href="mailto:test@gmail.com">test@gmail.com</a></p>
-
-						<ul class="social-menu">
+						<p>Alamat: Ruko Permata Harapan Baru  Blok H/30,
+						Jl. Raya Pejuang Jaya,  Harapan Indah, Bekasi Barat  17.131</p>
+						<p>Call Center: 021-8897.4058 -  021-8888.0699</p>
+						<p>Email: <a href="mailto:test@gmail.com">bank_pondasi@yahoo.com</a></p>
+						<p style="margin-top:-20px">Email adm: <a href="mailto:test@gmail.com">adm.bank.pondasi@gmail.com</a></p>
+						<ul class="social-menu" style="margin-right:30px">
 							<li class="list-inline-item"><a href="#"><i class="fab fa-facebook-square facebook"></i></a></li>
 							<li class="list-inline-item"><a href="#"><i class="fab fa-twitter-square twitter"></i></a></li>
 							<li class="list-inline-item"><a href="#"><i class="fab fa-instagram instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-6 mt-5">
-					<div class="menus d-flex justify-content-end">
-						<ul class="list-unstyled">
-							<li> <a href="http://bprad.com/laporan-publikasi">Laporan Publikasi</a></li>
-							<li> <a href="http://bprad.com/laporan-kelola">Tata Kelola</a></li>
-							<li> <a href="http://bprad.com/profile-perusahaan">Profile Perusahaan</a></li>
-							<li> <a href="http://bprad.com/karir">News &amp; Promo</a></li>
-						</ul>
-						<ul class="list-unstyled">
-							<li> <a href="http://bprad.com/product/tabungan">Tabungan</a></li>
-							<li> <a href="http://bprad.com/product/deposito">Deposito</a></li>
-							<li> <a href="http://bprad.com/product/kredit">Kredit</a></li>
-							<li> <a href="http://bprad.com/simulasi">simulasi</a></li>
 						</ul>
 					</div>
 				</div>
