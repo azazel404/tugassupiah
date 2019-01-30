@@ -21,7 +21,11 @@ class HomeController extends Controller
     }
     public function index()
     {
-    	return view('layouts.user.home', ['categories' => $this->categories]);
+        $content = Content::orderBy('created_at','desc')->limit(3)->get();
+    	return view('layouts.user.home', [
+            'categories' => $this->categories,
+            'contents' => $content
+        ]);
     }
 
     public function contact()
