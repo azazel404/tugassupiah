@@ -23,7 +23,7 @@ class ContentController extends Controller
     {
         $category = Category::orderBy('name', 'asc')->get();
 
-        return view('layouts.admin.content.add', ['categories' => $category,]);
+        return view('layouts.admin.content.add', ['categories' => $category]);
     }
 
     public function createContent(ContentRequest $req)
@@ -47,8 +47,8 @@ class ContentController extends Controller
     public function editContent($id)
     {
         $content = Content::find($id);
-        $category_item = CategoryItem::orderBy('name', 'asc')->get();
-        return view('layouts.admin.content.edit', ['content' => $content, 'category_items' => $category_item]);
+        $category = Category::orderBy('name', 'asc')->get();
+        return view('layouts.admin.content.edit', ['content' => $content, 'categories' => $category]);
     }
 
     public function updateContent(ContentRequest $req, $id)
