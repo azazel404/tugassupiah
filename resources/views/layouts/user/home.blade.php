@@ -74,7 +74,7 @@
 					<img class="card-img-top" src="{{ url('/storage/cover/' . $content->cover) }}" alt="{{ $content->title }}" style="height: 220px;">
 					<div class="card-body">
 						<h5 class="card-title">{{ $content->title }}</h5>
-						<a href="#" class="btn btn-primary">Read more.</a>
+						<a href="{{ route('content.detail', $content->slug) }}" class="btn btn-primary">Read more.</a>
 					</div>
 				</div>
 			</div>
