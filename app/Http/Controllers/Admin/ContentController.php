@@ -53,7 +53,7 @@ class ContentController extends Controller
         return view('layouts.admin.content.edit', ['content' => $content, 'categories' => $category, 'category_items' => $category_item]);
     }
 
-    public function updateContent(ContentRequest $req, $id)
+    public function updateContent(Request $req, $id)
     {
         $content = Content::find($id);
         $content->title = $req->title;
