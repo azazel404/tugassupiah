@@ -50,16 +50,18 @@
 							<div class="form-row">
 								<div class="form-group col">
 									<label>Kategori</label>
-									<select class="form-control" name="category_id">
-										@foreach($categories as $category_item)
-										<option value="{{ $category_item->id }}" {{ ($category_item->id == $category_item->id ? 'selected' : '') }}>{{ $category_item->name }}</option>
+									<select id="slcCategory" class="form-control" name="category_id">
+										@foreach($categories as $category)
+										<option value="{{ $category->id }}" {{ ($category->id == $category->id ? 'selected' : '') }}>{{ $category->name }}</option>
 										@endforeach
 									</select>
 								</div>
 								<div class="form-group col">
 									<label>Sub kategori</label>
 									<select id="slcSubCategory" class="form-control" name="category_item_id">
-
+										@foreach($category_items as $category_item)
+										<option value="{{ $category_item->id }}" {{ ($category_item->id == $content->category_item_id ? 'selected' : '') }}>{{ $category_item->name }}</option>
+										@endforeach
 									</select>
 								</div>
 							</div>
@@ -107,6 +109,11 @@
             }
         });
     }
+
+    $(document).on('change', '#slcCategory', function(){
+		getSubCategory($(this).val())
+	});
+
     function getSubCategory(id) {
 		var subCategoryHTML = ""
 		$.ajax({

@@ -48,7 +48,9 @@ class ContentController extends Controller
     {
         $content = Content::find($id);
         $category = Category::orderBy('name', 'asc')->get();
-        return view('layouts.admin.content.edit', ['content' => $content, 'categories' => $category]);
+        $category_item = CategoryItem::orderBy('name', 'asc')->get();
+
+        return view('layouts.admin.content.edit', ['content' => $content, 'categories' => $category, 'category_items' => $category_item]);
     }
 
     public function updateContent(ContentRequest $req, $id)
