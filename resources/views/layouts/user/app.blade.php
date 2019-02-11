@@ -12,7 +12,7 @@
 	<div class="container-nav">
 		<nav class="mt-4 navbar navbar-expand-lg navbar-light bg-light">
 			<a class="navbar-brand" href="{{route('home')}}">
-				<img src="{{ asset('img/logo.png') }}" class="img-fluid" style="width:300px;">
+				<img src="{{ asset('img/logo-full.png') }}" class="img-fluid" style="width:300px;">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -41,7 +41,7 @@
 						</li>
 					@endforeach
 					<li class="nav-item">
-						<a class="nav-link" href="#">Fitur Layanan</a>
+						<a class="nav-link" href="{{ route('service') }}">Fitur Layanan</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{{ route('contact') }}">Hubungi Kami</a>
