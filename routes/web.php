@@ -68,6 +68,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 		Route::get('/delete/{id}', 'Admin\MarketingController@deleteMarketing')->name('admin.marketing.delete');
 	});
 
+	Route::group(['prefix' => 'slideshow'], function(){
+		Route::get('/', 'Admin\SlideshowController@index')->name('admin.slideshow');
+		Route::get('/add', 'Admin\SlideshowController@addSlideshow')->name('admin.slideshow.add');
+		Route::post('/create', 'Admin\SlideshowController@createSlideshow')->name('admin.slideshow.create');
+	});
+
 	Route::group(['prefix' => 'category'], function(){
 		Route::get('/', 'Admin\CategoryController@index')->name('admin.category');
 		Route::get('/add', 'Admin\CategoryController@addCategory')->name('admin.category.add');

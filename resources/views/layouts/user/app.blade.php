@@ -71,6 +71,7 @@
 						</ul>
 					</div>
 				</div>
+			</div>
       	</div>
       </footer>
 	<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>

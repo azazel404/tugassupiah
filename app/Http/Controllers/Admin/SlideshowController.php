@@ -2,14 +2,37 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Content;
 use App\Slideshow;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SlideshowRequest;
 
 class SlideshowController extends Controller
 {
     public function index()
     {
-    	
+    	$slideshow = Slideshow::orderBy('created_at', 'desc')->paginate(18);
+    	return view('layouts.admin.slideshow.list', ['slideshows' => $slideshow]);
+    }
+
+    public function addSlideshow()
+    {
+    	$content = Content::select('id', 'title')->orderBy('title', 'asc')->get();
+    	return view('layouts.admin.slideshow.add', ['contents' => $content]);
+    }
+
+    public function createSlideshow(SlideshowRequest $req)
+    {
+    	$slideshow = new Slideshow;
+    	$image = $req->image->store('public/slideshow');
+    	$slideshow->image = basename($image);
+    	$slideshow->content_id = $req->content_id;
+
+    	if (!$slideshow->save()) {
+            return back()->with('error', 'something went wrong');
+        }
+
+        return redirect()->route('admin.slideshow');
     }
 }

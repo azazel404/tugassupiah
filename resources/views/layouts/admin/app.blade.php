@@ -105,6 +105,14 @@
 	          			</p>
 	          		</a>
 	          	</li>
+	          	<li class="nav-item">
+	          		<a href="{{ route('admin.slideshow') }}" class="nav-link">
+	          			<i class="nav-icon fa fa-tree"></i>
+	          			<p>
+	          				Slideshow
+	          			</p>
+	          		</a>
+	          	</li>
 	          	<li class="nav-item has-treeview">
 	          		<a href="{{ route('admin.category') }}" class="nav-link">
 	          			<i class="nav-icon fa fa-edit"></i>

@@ -20,17 +20,21 @@
 
 <section class="content">
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12 col-12">
-				<div class="card">
-					<div class="card-header">
-						<a href="{{ route('admin.category.add') }}" class="btn btn-primary float-right">+ add new</a>
-					</div>
-					<div class="card-body">
-						<!-- gambar -->
+		<a href="{{ route('admin.slideshow.add') }}" class="btn btn-primary">+ add new</a>
+		<div class="row mt-3">
+			@foreach($slideshows as $slideshow)
+				<div class="col-md-4 col-12">
+					<div class="card">
+						<a target="_blank" href="{{ route('content.detail', $slideshow->content->slug) }}">
+							<img src="{{ asset('storage/slideshow/') . '/' . $slideshow->image }}" class="img-fluid">
+						</a>
+						<div class="card-body">
+							<a href="" class="btn btn-primary">Edit</a>
+							<a href="" class="btn btn-danger">Hapus</a>
+						</div>
 					</div>
 				</div>
-			</div>
+			@endforeach
 		</div>
 	</div>
 </section>
