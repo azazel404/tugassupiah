@@ -140,7 +140,7 @@
 	          	</li>
 	          	<li class="nav-header">Management Account</li>
 	          	<li class="nav-item">
-	          		<a href="pages/calendar.html" class="nav-link">
+	          		<a href="{{ route('admin.maintain') }}" class="nav-link">
 	          			<i class="nav-icon fa fa-calendar"></i>
 	          			<p>
 	          				Account Nasabah
@@ -158,7 +158,7 @@
 	          	</li>
 	          	<li class="nav-header">Virtual Account</li>
 	          		<li class="nav-item has-treeview">
-	          		<a href="#" class="nav-link">
+	          		<a href="{{ route('admin.maintain') }}" class="nav-link">
 	          			<i class="nav-icon fa fa-file"></i>
 	          			<p>
 	          				Upload File
@@ -167,19 +167,19 @@
 	          		</a>
 	          		<ul class="nav nav-treeview">
 	          			<li class="nav-item">
-	          				<a href="pages/UI/general.html" class="nav-link">
+	          				<a href="{{ route('admin.maintain') }}" class="nav-link">
 	          					<i class="fa fa-circle-o nav-icon"></i>
 	          					<p>Daftar Tabungan</p>
 	          				</a>
 	          			</li>
 	          			<li class="nav-item">
-	          				<a href="pages/UI/icons.html" class="nav-link">
+	          				<a href="{{ route('admin.maintain') }}" class="nav-link">
 	          					<i class="fa fa-circle-o nav-icon"></i>
 	          					<p>Jadwal Angsuran</p>
 	          				</a>
 	          			</li>
 						  <li class="nav-item">
-	          				<a href="pages/UI/icons.html" class="nav-link">
+	          				<a href="{{ route('admin.maintain') }}" class="nav-link">
 	          					<i class="fa fa-circle-o nav-icon"></i>
 	          					<p>Nominatif Deposito</p>
 	          				</a>

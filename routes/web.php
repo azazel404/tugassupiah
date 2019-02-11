@@ -38,6 +38,9 @@ Route::group(['prefix' => 'service'], function(){
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 	Route::get('/dashboard', 'Admin\AdminController@dashboard')->name('admin.dashboard');
+	Route::get('/maintain', function(){
+		return view('layouts.admin.maintain');
+	})->name('admin.maintain');
 
 	Route::group(['prefix' => 'manage-account'], function(){
 		Route::group(['prefix' => 'admin'], function(){
@@ -116,3 +119,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 
 	Route::post('/upload-image', 'Api\ImageUploadController@uploadImage');
 });
+
