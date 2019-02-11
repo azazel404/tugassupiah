@@ -6,6 +6,7 @@ use App\Category;
 use App\Marketing;
 use App\SukuBunga;
 use App\Content;
+use App\Slideshow;
 use App\CategoryItem;
 use Illuminate\Http\Request;
 
@@ -22,9 +23,11 @@ class HomeController extends Controller
     public function index()
     {
         $content = Content::orderBy('created_at','desc')->limit(3)->get();
+        $slideshow = Slideshow::orderBy('created_at', 'desc')->get();
     	return view('layouts.user.home', [
-            'categories' => $this->categories,
-            'contents' => $content
+            'categories'    => $this->categories,
+            'contents'      => $content,
+            'slideshows'    => $slideshow
         ]);
     }
 

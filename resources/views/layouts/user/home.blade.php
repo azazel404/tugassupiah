@@ -6,20 +6,18 @@
 		<div class="col-md-12 col-12">
 			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					@foreach($slideshows as $key => $slideshow)
+						<li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : '' }}"></li>
+					@endforeach
 				</ol>
 				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img class="d-block w-100" src="{{ asset('img/Banner_ATS.jpg') }}" alt="First slide">
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100" src="{{ asset('img/deposito_dana_hoki.jpg') }}" alt="Second slide">
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100" src="{{ asset('img/simpel_danus.jpg') }}" alt="Third slide">
-					</div>
+					@foreach($slideshows as $key => $slideshow)
+						<div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+							<a target="_blank" href="{{ route('content.detail', $slideshow->content->slug) }}">
+								<img src="{{ asset('storage/slideshow/') . '/' . $slideshow->image }}" class="d-block w-100">
+							</a>
+						</div>
+					@endforeach
 				</div>
 				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
