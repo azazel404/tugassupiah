@@ -30,7 +30,7 @@
 						</a>
 						<div class="card-body">
 							<a href="" class="btn btn-primary">Edit</a>
-							<a href="" class="btn btn-danger">Hapus</a>
+							<a id="btnDeleteSlideshow" href="javascript:void(0)" data-id="{{ $slideshow->id }}" class="btn btn-danger">Hapus</a>
 						</div>
 					</div>
 				</div>
@@ -41,7 +41,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="modalDeleteCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalDeleteSlideshow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -56,7 +56,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <a id="deleteCategory" href="" class="btn btn-danger">Hapus</a>
+        <a id="deleteSlideshow" href="" class="btn btn-danger">Hapus</a>
       </div>
     </div>
   </div>
@@ -65,9 +65,9 @@
 
 @section('script')
 <script type="text/javascript">
-	$(document).on('click', '#btnDeleteCategory', function(){
-		$('#deleteCategory').attr('href', '/admin/slideshow/delete/' + $(this).data('id'));
-		$('#modalDeleteCategory').modal('show');
+	$(document).on('click', '#btnDeleteSlideshow', function(){
+		$('#deleteSlideshow').attr('href', '/admin/slideshow/delete/' + $(this).data('id'));
+		$('#modalDeleteSlideshow').modal('show');
 	})
 </script>
 @endsection

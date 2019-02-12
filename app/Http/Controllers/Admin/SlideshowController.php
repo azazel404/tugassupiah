@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Storage;
 use App\Content;
 use App\Slideshow;
 use Illuminate\Http\Request;
@@ -73,7 +74,7 @@ class SlideshowController extends Controller
             return back()->with('error', 'something went wrong');
         }
 
-        if (!Storage::delete('public/slideshow/' . $content->image)) {
+        if (!Storage::delete('public/slideshow/' . $slideshow->image)) {
             return back()->with('error', 'something went wrong');
         }
 
