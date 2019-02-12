@@ -51,8 +51,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Jika anda menghapus kategori ini, maka konten - konten yang menggunakan kategori ini akan ikut terhapus. <br>
-		apakah anda yakin ingin menghapus ?</p>
+        <p>Anda yakin ingin menghapus slideshow ini ?</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
