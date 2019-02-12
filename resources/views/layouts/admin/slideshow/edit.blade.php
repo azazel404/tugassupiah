@@ -28,7 +28,7 @@
 			<div class="col-md-6 col-12">
 				<div class="card">
 					<div class="card-header">
-						<button type="submit" form="addSlideshow" class="btn btn-primary float-right">Tambah slide</button>
+						<button type="submit" form="addSlideshow" class="btn btn-primary float-right">Edit slide</button>
 					</div>
 					<div class="card-body">
 						<form id="addSlideshow" action="{{ route('admin.slideshow.update', $slideshow->id) }}" method="POST" enctype="multipart/form-data">
