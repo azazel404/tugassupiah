@@ -31,7 +31,7 @@ class ServiceController extends Controller
             return back()->with('error', 'something went wrong');
         }
 
-        return back()->with('message', 'Oke pengaduan anda telah di submit');
+        return back()->with('message', 'pengaduan anda telah di submit');
     }
 
     public function createPengajuan(PengajuanRequest $req)
@@ -46,6 +46,6 @@ class ServiceController extends Controller
             return back()->with('error', 'something went wrong');
         }
 
-        return back()->with('message', 'Oke pengajuan anda telah di submit');
+        return back()->with('message', ' pengajuan anda telah di submit');
     }
 }

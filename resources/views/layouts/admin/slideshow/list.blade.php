@@ -66,7 +66,7 @@
 @section('script')
 <script type="text/javascript">
 	$(document).on('click', '#btnDeleteCategory', function(){
-		$('#deleteCategory').attr('href', '/admin/category/delete/' + $(this).data('id'));
+		$('#deleteCategory').attr('href', '/admin/slideshow/delete/' + $(this).data('id'));
 		$('#modalDeleteCategory').modal('show');
 	})
 </script>

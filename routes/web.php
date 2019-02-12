@@ -64,7 +64,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 
 		Route::get('/edit/{id}', 'Admin\MarketingController@editMarketing')->name('admin.marketing.edit');
 		Route::post('/update/{id}', 'Admin\MarketingController@updateMarketing')->name('admin.marketing.update');
-
 		Route::get('/delete/{id}', 'Admin\MarketingController@deleteMarketing')->name('admin.marketing.delete');
 	});
 
@@ -72,6 +71,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 		Route::get('/', 'Admin\SlideshowController@index')->name('admin.slideshow');
 		Route::get('/add', 'Admin\SlideshowController@addSlideshow')->name('admin.slideshow.add');
 		Route::post('/create', 'Admin\SlideshowController@createSlideshow')->name('admin.slideshow.create');
+		Route::get('/delete/{id}', 'Admin\SlideshowController@deleteSlideshow')->name('admin.slideshow.delete');
 	});
 
 	Route::group(['prefix' => 'category'], function(){

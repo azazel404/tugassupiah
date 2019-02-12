@@ -33,7 +33,7 @@ class SlideshowRequest extends FormRequest
     {
         return [
             "image.required"    => "gambar slide masih kosong, harap di isi",
-            "image.mimes"       => "firmat gambar harus jpeg, jpg, bmp atau png",
+            "image.mimes"       => "format gambar harus jpeg, jpg, bmp atau png",
 
             "content_id.required"   => "belum ada konten yang dipilih",
             "content_id.integer"    => "sepertinya ada masalah saat memilih kontent"
