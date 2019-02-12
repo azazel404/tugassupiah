@@ -29,7 +29,7 @@
 							<img src="{{ asset('storage/slideshow/') . '/' . $slideshow->image }}" class="img-fluid">
 						</a>
 						<div class="card-body">
-							<a href="" class="btn btn-primary">Edit</a>
+							<a href="{{ route('admin.slideshow.edit', $slideshow->id) }}" class="btn btn-primary">Edit</a>
 							<a id="btnDeleteSlideshow" href="javascript:void(0)" data-id="{{ $slideshow->id }}" class="btn btn-danger">Hapus</a>
 						</div>
 					</div>

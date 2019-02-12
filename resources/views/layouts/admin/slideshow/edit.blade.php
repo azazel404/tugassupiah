@@ -1,17 +1,20 @@
 @extends('layouts.admin.app')
+@section('stylesheet')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+@endsection
+
 @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0 text-dark">Konten {{ $content->title }}</h1>
+				<h1 class="m-0 text-dark">Slideshow</h1>
 			</div><!-- /.col -->
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-					<li class="breadcrumb-item"><a href="{{ route('admin.content') }}">Kontent</a></li>
-					<li class="breadcrumb-item active">Edit Konten</li>
+					<li class="breadcrumb-item active">Slideshow</li>
 				</ol>
 			</div><!-- /.col -->
 		</div><!-- /.row -->
@@ -22,53 +25,27 @@
 <section class="content">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-12 col-12">
+			<div class="col-md-6 col-12">
 				<div class="card">
 					<div class="card-header">
-						<span class="font-weight-light" style="font-size: 20px;">Edit konten</span> <button form="addContent" type="submit" class="btn btn-primary float-right">Simpan</button>
+						<button type="submit" form="addSlideshow" class="btn btn-primary float-right">Tambah slide</button>
 					</div>
 					<div class="card-body">
-						@if(Session::has('error'))
-							<div class="alert alert-danger">
-								{{ Session::get('error') }}
-							</div>
-						@endif
-						<form id="addContent" action="{{ route('admin.content.update', $content->id) }}" method="post" enctype="multipart/form-data">
+						<form id="addSlideshow" action="{{ route('admin.slideshow.update', $slideshow->id) }}" method="POST" enctype="multipart/form-data">
 							@csrf
-							<div class="form-row">
-								<div class="form-group col">
-									<label>Judul</label>
-									<input type="text" name="title" class="form-control" placeholder="Uzumaki naruto" value="{{ $content->title }}">
-								</div>
-								<div class="form-group col">
-									<label>Cover gambar</label>
-									<br>
-									<img src="{{ asset('storage/cover/') . '/' . $content->cover }}" alt="{{ $content->title }}" style="width: 50%;">
-									<input type="file" name="cover" class="form-control mt-2">
-								</div>
+							<div class="form-group">
+								<label>Masukkan gambar</label>
+								<img src="{{ asset('storage/slideshow/') . '/' . $slideshow->image }}" class="img-fluid">
+								<input type="file" name="image" class="form-control" name="image">
 							</div>
-							<div class="form-row">
-								<div class="form-group col">
-									<label>Kategori</label>
-									<select id="slcCategory" class="form-control" name="category_id">
-										@foreach($categories as $category)
-										<option value="{{ $category->id }}" {{ ($category->id == $category->id ? 'selected' : '') }}>{{ $category->name }}</option>
-										@endforeach
-									</select>
-								</div>
-								<div class="form-group col">
-									<label>Sub kategori</label>
-									<select id="slcSubCategory" class="form-control" name="category_item_id">
-										@foreach($category_items as $category_item)
-										<option value="{{ $category_item->id }}" {{ ($category_item->id == $content->category_item_id ? 'selected' : '') }}>{{ $category_item->name }}</option>
-										@endforeach
-									</select>
-								</div>
+							<div class="form-group">
+								<label>Pilih Konten</label>
+								<select class="js-example-basic-single form-control" name="content_id">
+									@foreach($contents as $content)
+										<option value="{{ $content->id }}" {{ $content->id == $slideshow->content_id ? 'selected' : '' }}>{{ $content->title }}</option>
+									@endforeach
+								</select>
 							</div>
-                            <div class="form-group">
-                                <label>Konten</label>
-                                <textarea id="content" name="content">{{ $content->content }}</textarea>
-                            </div>
 						</form>
 					</div>
 				</div>
@@ -76,58 +53,13 @@
 		</div>
 	</div>
 </section>
+
 @endsection
-
 @section('script')
-<!-- include summernote css/js -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#content').summernote({
-            height: 300,
-            callbacks:{
-                onImageUpload: function(files, editor, welEditable){
-                    uploadImage(files[0], editor, welEditable);
-                }
-            }
-        });
-    });
-
-    function uploadImage(file, editor, welEditable) {
-        data = new FormData();
-        data.append("file", file);
-        $.ajax({
-            data: data,
-            type: "POST",
-            url: "/admin/upload-image",
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function(url) {
-                $('#content').summernote('editor.insertImage', url);
-            }
-        });
-    }
-
-    $(document).on('change', '#slcCategory', function(){
-		getSubCategory($(this).val())
+	$(document).ready(function() {
+		$('.js-example-basic-single').select2();
 	});
-
-    function getSubCategory(id) {
-		var subCategoryHTML = ""
-		$.ajax({
-			url : "/admin/category/json/" + id,
-			type : "GET",
-			success : (res) => {
-				res.data.forEach((subCategory) => {
-					subCategoryHTML += `
-						<option value="${subCategory.id}">${subCategory.name}</option>
-					`
-				})
-				$('#slcSubCategory').html(subCategoryHTML)
-			}
-		})
-	}
 </script>
 @endsection

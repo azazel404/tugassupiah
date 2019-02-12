@@ -39,18 +39,14 @@ class SlideshowController extends Controller
 
     public function editSlideshow($id)
     {
-        $content = Slideshow::find($id);
-        $category = Category::orderBy('name', 'asc')->get();
-        $category_item = CategoryItem::orderBy('name', 'asc')->get();
-
-        return view('layouts.admin.slideshow.edit', ['content' => $content, 'categories' => $category, 'category_items' => $category_item]);
+        $slideshow = Slideshow::findOrFail($id);
+        $content = Content::select('id', 'title')->orderBy('title', 'asc')->get();
+        return view('layouts.admin.slideshow.edit', ['slideshow' => $slideshow, 'contents' => $content]);
     }
 
     public function updateSlideshow(Request $req, $id)
     {
-        $slideshow = Slideshow::find($id);
-        $image = $req->image->store('public/slideshow');
-    	$slideshow->image = basename($image);
+        $slideshow = Slideshow::findOrFail($id);
     	$slideshow->content_id = $req->content_id;
 
         if ($req->hasFile('image')) {
