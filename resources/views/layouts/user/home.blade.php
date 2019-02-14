@@ -13,7 +13,7 @@
 				<div class="carousel-inner">
 					@foreach($slideshows as $key => $slideshow)
 						<div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-							<a target="_blank" href="{{ route('content.detail', $slideshow->content->slug) }}">
+							<a target="_blank" href="{{ (isset($slideshow->content->slug) ? route('content.detail', $slideshow->content->slug) : route('content.notfound')) }}">
 								<img src="{{ asset('storage/slideshow/') . '/' . $slideshow->image }}" class="d-block w-100">
 							</a>
 						</div>

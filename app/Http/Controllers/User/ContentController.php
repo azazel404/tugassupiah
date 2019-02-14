@@ -48,4 +48,11 @@ class ContentController extends Controller
             'categories'    => $this->categories
         ]);
     }
+
+    public function contentNotFound()
+    {
+        return view('layouts.error.404', [
+            'categories'    => $this->categories,
+        ]);
+    }
 }

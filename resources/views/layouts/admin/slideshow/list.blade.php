@@ -25,7 +25,7 @@
 			@foreach($slideshows as $slideshow)
 				<div class="col-md-4 col-12">
 					<div class="card">
-						<a target="_blank" href="{{ route('content.detail', $slideshow->content->slug) }}">
+						<a target="_blank" href="{{ (isset($slideshow->content->slug) ? route('content.detail', $slideshow->content->slug) : route('content.notfound')) }}">
 							<img src="{{ asset('storage/slideshow/') . '/' . $slideshow->image }}" class="img-fluid">
 						</a>
 						<div class="card-body">
