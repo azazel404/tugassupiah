@@ -38,18 +38,6 @@
 			</li>
 		</ul>
 
-		<!-- SEARCH FORM -->
-		<form class="form-inline ml-3">
-			<div class="input-group input-group-sm">
-				<input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-				<div class="input-group-append">
-					<button class="btn btn-navbar" type="submit">
-						<i class="fa fa-search"></i>
-					</button>
-				</div>
-			</div>
-		</form>
-
 		<!-- Right navbar links -->
 		<ul class="navbar-nav ml-auto">
 		<li class="nav-item"><a href="{{ route('logout') }}" class="nav-link logout">Logout &nbsp<i class="fa fa-sign-out"></i></a></li>
@@ -59,8 +47,8 @@
 	<aside class="main-sidebar sidebar-dark-primary elevation-4"class="main-sidebar sidebar-dark-primary elevation-4">
 		<!-- Brand Logo -->
 		<a href="index3.html" class="brand-link">
-			<img src="{{ asset('img/logo.png') }}" alt="AdminLTE Logo" class="brand-image"
-			style="opacity: .8">
+			<!-- <img src="{{ asset('img/logo.png') }}" alt="AdminLTE Logo" class="brand-image"
+			style="opacity: .8"> -->
 			<span class="brand-text font-weight-light">BPR Pondasi</span>
 		</a>
 
@@ -107,7 +95,7 @@
 	          	</li>
 	          	<li class="nav-item">
 	          		<a href="{{ route('admin.slideshow') }}" class="nav-link">
-	          			<i class="nav-icon fa fa-tree"></i>
+	          			<i class="nav-icon fa fa-desktop"></i>
 	          			<p>
 	          				Slideshow
 	          			</p>
