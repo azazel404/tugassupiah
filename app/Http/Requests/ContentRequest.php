@@ -27,7 +27,7 @@ class ContentRequest extends FormRequest
             "title" => "required|string|max:100",
             "category_id" => "required|integer",
             "cover" => "required|mimes:jpeg,jpg,bmp,png",
-            "content" => "required|string|max:7000"
+            "content" => "required|string|max:14000"
         ];
     }
 
@@ -46,7 +46,7 @@ class ContentRequest extends FormRequest
 
             "content.required" => "Isi konten tidak boleh kosong, harap di isi",
             "content.string" => "Isi konten harus berupa karakter huruf",
-            "content.max" => "Konten maksimal 7000 karakter"
+            "content.max" => "Konten maksimal 14000 karakter"
         ];
     }
 }
