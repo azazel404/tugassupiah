@@ -34,7 +34,7 @@
 							<h5 class="card-title">{{ $content->title }}</h5>
 							<small class="text-grey">{{ $content->category->name }} {{ (isset($content->CategoryItem->name) ? ' > ' . $content->CategoryItem->name : '') }} | {{ $content->created_at->diffForHumans() }}</small>
 							<br>
-							<a href="#" class="btn btn-info mt-3">Lihat</a>
+							<a target="__blank" href="{{ route('content.detail', $content->slug) }}" class="btn btn-info mt-3">Lihat</a>
 							<a href="{{ route('admin.content.edit', $content->id) }}" class="btn btn-primary mt-3">Edit</a>
 							<a id="btnDeleteContent" href="javascript:void(0)" data-id="{{ $content->id }}" class="btn btn-danger mt-3">Hapus</a>
 						</div>
