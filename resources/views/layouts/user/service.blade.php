@@ -81,7 +81,7 @@
 					<textarea cols="3" rows="8" name="address" class="form-control"></textarea>
 				</div>
 
-				<button type="submit" class="btn btn-primary btn-block">Submit</button>
+				<button type="submit" class="btn btn-primary btn-block">Kirim</button>
 			</form>
 		</div>
 		<div class="col-md-4">
