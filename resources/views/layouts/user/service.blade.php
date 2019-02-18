@@ -28,7 +28,8 @@
 				<label>Perihal</label>
 				<select id="slcPrihal" class="form-control" on>
 					<option value="2">Pengaduan</option>
-					<option value="1">Pengajuan</option>
+					<option value="1">Pengajuan Kredit</option>
+					<option value="3">Pengajuan Tabungan</option>
 				</select>
 			</div>
 
@@ -60,6 +61,10 @@
 
 			<form id="formPengajuan" action="{{ route('service.pengajuan') }}" method="post">
 				@csrf
+				<div class="form-group">
+					<label>Tipe Kredit</label>
+					<input type="text" name="tipe_kredit" class="form-control" placeholder="Kredit Maha Asyik">
+				</div>
 				<div class="form-row">
 					<div class="form-group col">
 						<label>Nama</label>
@@ -83,6 +88,14 @@
 
 				<button type="submit" class="btn btn-primary btn-block">Kirim</button>
 			</form>
+
+			<div id="formPengajuanTabungan" class="mt-5">
+				<div class="text-center">
+					@foreach($pengajuanTabungans as $pengajuanTabungan)
+						<a target="__blank" href="{{ asset('storage/form_tabungan/') . '/' . $pengajuanTabungan->file_pdf }}" class="btn btn-primary btn-lg">Unduh {{ $pengajuanTabungan->name }}</a>
+					@endforeach
+				</div>
+			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="card blue">
@@ -156,17 +169,27 @@
 			showPengajuan()
 		}else if (opt == 2) {
 			showPengaduan()
+		}else if (opt == 3) {
+			showPengajuanTabungan()
 		}
 	})
 
 	function showPengajuan(){
 		$('#formPengajuan').show()
 		$('#formPengaduan').hide()
+		$('#formPengajuanTabungan').hide()
 	}
 
 	function showPengaduan(){
 		$('#formPengajuan').hide()
+		$('#formPengajuanTabungan').hide()
 		$('#formPengaduan').show()
+	}
+
+	function showPengajuanTabungan() {
+		$('#formPengajuan').hide()
+		$('#formPengajuanTabungan').show()
+		$('#formPengaduan').hide()
 	}
 </script>
 @endsection

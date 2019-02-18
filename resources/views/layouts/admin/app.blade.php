@@ -134,6 +134,14 @@
 	          			</p>
 	          		</a/>
 	          	</li>
+	          	<li class="nav-item has-treeview">
+	          		<a href="{{ route('admin.pengajuan.tabungan') }}" class="nav-link">
+	          			<i class="nav-icon fa fa-table"></i>
+	          			<p>
+	          				Pengajuan Tabungan
+	          			</p>
+	          		</a/>
+	          	</li>
 	          	<li class="nav-header">Management Account</li>
 	          	<li class="nav-item">
 	          		<a href="{{ route('admin.maintain') }}" class="nav-link">

@@ -15,6 +15,9 @@ class CreatePengajuanTabunganTable extends Migration
     {
         Schema::create('pengajuan_tabungans', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('file_pdf');
+            $table->integer('status');
             $table->timestamps();
         });
     }
