@@ -110,8 +110,8 @@ class CategoryController extends Controller
             return back()->with('error', 'something went wrong');
         }
 
-        $category->delete() 
-        
+        $category->delete();
+
         return back();
     }
 
