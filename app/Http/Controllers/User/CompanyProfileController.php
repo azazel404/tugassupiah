@@ -15,7 +15,7 @@ class CompanyProfileController extends Controller
     {
         $companyProfile = CompanyProfile::findOrFail(1);
         $categories = Category::orderBy('created_at', 'desc')->get();
-        $content = Content::orderBy('created_at', 'desc')->limit(5);
+        $content = Content::orderBy('created_at', 'desc')->limit(5)->get();
 
         return view('layouts.user.profile', [
             'company_profile'   => $companyProfile,
