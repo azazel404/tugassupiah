@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Bank Bpr</title>
+	<title>Bank BPR Pondasi</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
@@ -23,9 +23,7 @@
 					<li class="nav-item">
 						<a class="nav-link" href="{{ route('profile') }}">Tentang Kami</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ route('sukubunga') }}">Suku Bunga</a>
-					</li>
+				
 					@foreach($categories as $category)
 						<li class="nav-item {{ ($category->categoryItem ? 'dropdown' : '') }}">
 							<a class="nav-link {{ (count($category->categoryItem) > 0 ? 'dropdown-toggle' : '') }}" href="{{ (count($category->categoryItem) > 0 ? '#' : route('content.category', $category->id)) }}" id="{{ $category->id }}" data-toggle="{{ (count($category->categoryItem) > 0 ? 'dropdown' : '') }}">
@@ -40,6 +38,9 @@
 							@endif
 						</li>
 					@endforeach
+					<li class="nav-item">
+						<a class="nav-link" href="{{ route('sukubunga') }}">Suku Bunga</a>
+					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{{ route('service') }}">Fitur Layanan</a>
 					</li>
