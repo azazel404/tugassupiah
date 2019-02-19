@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Content;
 use App\Category;
 use App\CategoryItem;
 use Illuminate\Http\Request;
@@ -60,9 +61,12 @@ class CategoryController extends Controller
     public function deleteCategory($id)
     {
         $category = Category::find($id);
-        if (!$category->delete()) {
+
+        if (!Content::where('category_id', $id)->delete()) {
             return back()->with('error', 'something went wrong');
         }
+
+        $category->delete()
 
         return back();
     }
@@ -101,10 +105,13 @@ class CategoryController extends Controller
     public function deleteCategoryItem($id)
     {
         $category = CategoryItem::find($id);
-        if (!$category->delete()) {
+
+        if (!Content::where('category_id', $id)->delete()) {
             return back()->with('error', 'something went wrong');
         }
 
+        $category->delete() 
+        
         return back();
     }
 
