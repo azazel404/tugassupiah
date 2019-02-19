@@ -98,7 +98,7 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-			<div class="card blue">
+			<!-- <div class="card blue">
 				<div class="card-header">
 					Search
 				</div>
@@ -117,7 +117,7 @@
 						</div>
 					</form>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="card blue mt-5">
 				<div class="card-header">
