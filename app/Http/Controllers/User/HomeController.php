@@ -34,21 +34,30 @@ class HomeController extends Controller
     public function contact()
     {
         $marketing = Marketing::all();
+        $content = Content::orderBy('created_at', 'desc')->limit(5)->get();
     	return view('layouts.user.contact', [
             'categories' => $this->categories,
-            'marketings' => $marketing
+            'marketings' => $marketing,
+            'contents'   => $content
         ]);
     }
 
     public function profile()
     {
-    	return view('layouts.user.profile', ['categories' => $this->categories]);
+    	return view('layouts.user.profile', [
+            'categories' => $this->categories
+        ]);
     }
 
     public function sukuBunga()
     {
         $sukuBunga = SukuBunga::orderBy('name', 'asc')->paginate(18);
-        return view('layouts.user.sukuBunga', ['SukuBungas' => $sukuBunga,'categories' => $this->categories]);
+        $content = Content::orderBy('created_at', 'desc')->limit(5)->get();
+        return view('layouts.user.sukuBunga', [
+            'SukuBungas' => $sukuBunga,
+            'categories' => $this->categories,
+            'contents'   => $content
+        ]);
 
     }
 

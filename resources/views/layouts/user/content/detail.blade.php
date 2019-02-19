@@ -10,7 +10,7 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-			<div class="card blue">
+			<!-- <div class="card blue">
 				<div class="card-header">
 					Search
 				</div>
@@ -29,7 +29,7 @@
 						</div>
 					</form>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="card blue mt-5">
 				<div class="card-header">
@@ -37,28 +37,19 @@
 				</div>
 				<div class="card-body">
 					<div class="list-unstyled">
-						<li class="pt-2 pb-2">
-							<div class="d-flex">
-								<img src="{{ asset('img/Banner_ATS.jpg') }}" class="img-thumb">
-								<div class="ml-3">
-									<a href="">
-										<h5 class="m-none">Selamat Hari BPR dan BPRS Nasional</h5>
-									</a>
-									<span class="text-gray">Jul 11, 2018 04:56am</span>
+						@foreach($contents as $content)
+							<li class="pt-2 pb-2">
+								<div class="d-flex">
+									<img src="{{ asset('storage/cover/') . '/' . $content->cover }}" class="img-thumb">
+									<div class="ml-3">
+										<a href="">
+											<h5 class="m-none">{{ $content->title }}</h5>
+										</a>
+										<span class="text-gray">{{ $content->created_at->diffForHumans() }}</span>
+									</div>
 								</div>
-							</div>
-						</li>
-						<li class="pt-2 pb-2">
-							<div class="d-flex">
-								<img src="{{ asset('img/Banner_ATS.jpg') }}" class="img-thumb">
-								<div class="ml-3">
-									<a href="">
-										<h5 class="m-none">Selamat Hari BPR dan BPRS Nasional</h5>
-									</a>
-									<span class="text-gray">Jul 11, 2018 04:56am</span>
-								</div>
-							</div>
-						</li>
+							</li>
+						@endforeach
 					</div>
 				</div>
 			</div>

@@ -43,8 +43,10 @@ class ContentController extends Controller
     public function getDetailContent($slug)
     {
         $content = Content::where('slug', $slug)->first();
+        $contents = Content::orderBy('created_at', 'desc')->limit(5)->get();
         return view('layouts.user.content.detail', [
-            'content' => $content, 
+            'content' => $content,
+            'contents'      => $contents,
             'categories'    => $this->categories
         ]);
     }

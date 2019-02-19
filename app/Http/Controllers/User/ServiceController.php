@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Content;
 use App\Category;
 use App\Pengaduan;
 use App\Pengajuan;
+use App\PengajuanTabungan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PengaduanRequest;
@@ -16,7 +18,13 @@ class ServiceController extends Controller
     public function index()
     {
         $categories = Category::orderBy('created_at', 'desc')->get();
-        return view('layouts.user.service', ['categories' => $categories]);
+        $pengajuanTabungan = PengajuanTabungan::orderBy('name', 'asc')->paginate(12);
+        $content = Content::orderBy('created_at', 'desc')->limit(5)->get();
+        return view('layouts.user.service', [
+            'categories'            => $categories,
+            'pengajuanTabungans'    => $pengajuanTabungan,
+            'contents'              => $content
+        ]);
     }
 
     public function createPengaduan(PengaduanRequest $req)

@@ -35,7 +35,7 @@ body{
 	background-color: #eee;
 }
 .social-menu li a{
-	font-size: 24px;
+	font-size: 40px;
 }
 .facebook{
 	color: #4267B2;
@@ -99,5 +99,18 @@ body{
 
 .text-gray{
 	color: #8a8a8a !important;
+}
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	padding: 12px;
 }
 /*end component*/
