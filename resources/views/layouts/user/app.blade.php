@@ -51,10 +51,13 @@
 		</nav>
 	</div>
 	@yield('content')
+	<a target="__blank" href="https://api.whatsapp.com/send?phone=6281237538786&text=Hai" class="float">
+		<img src="{{ asset('img/chat.png') }}" style="width: 100%;fill: #fff;">
+	</a>
 	<footer class="main-footer mt-9">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12 mt-5" style="text-align:center">
+				<div class="col-md-12 mt-5" style="text-align:center;">
 					<div class="logo">
 						<h4 class="">BPR Pondasi Niaga Perdana</h4>
 					</div>
