@@ -117,6 +117,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 		Route::get('/delete/{id}', 'Admin\PengajuanTabunganController@deletePengajuanTabungan')->name('admin.pengajuan.tabungan.delete');
 	});
 
+	Route::group(['prefix' => 'pengajuan-deposito'], function(){
+		Route::get('/', 'Admin\PengajuanDepositoController@index')->name('admin.pengajuan.deposito');
+		Route::post('/add', 'Admin\PengajuanDepositoController@addPengajuanDeposito')->name('admin.pengajuan.deposito.add');
+		Route::get('/delete/{id}', 'Admin\PengajuanDepositoController@deletePengajuanDeposito')->name('admin.pengajuan.deposito.delete');
+	});
+
 	Route::group(['prefix' => 'suku-bunga'], function(){
 		Route::get('/', 'Admin\SukuBungaController@index')->name('admin.sukuBunga');
 		Route::get('/add', 'Admin\SukuBungaController@addSukuBunga')->name('admin.sukuBunga.add');

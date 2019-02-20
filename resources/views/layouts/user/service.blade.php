@@ -31,6 +31,7 @@
 				<select id="slcPrihal" class="form-control" on>
 					<option value="2">Pengaduan</option>
 					<option value="1">Pengajuan Kredit</option>
+					<option value="4">Pengajuan Deposito</option>
 					<option value="3">Pengajuan Tabungan</option>
 				</select>
 			</div>
@@ -97,6 +98,17 @@
 						<a target="__blank" href="{{ asset('storage/form_tabungan/') . '/' . $pengajuanTabungan->file_pdf }}" class="btn btn-primary btn-lg">Unduh {{ $pengajuanTabungan->name }}</a>
 					@endforeach
 				</div>
+				{{ $pengajuanTabungans->links() }}
+			</div>
+
+			<div id="formPengajuanDeposito" class="mt-5">
+				<div class="text-center">
+					@foreach($pengajuanDepositos as $pengajuanDeposito)
+						<a target="__blank" href="{{ asset('storage/form_deposito/') . '/' . $pengajuanDeposito->file_pdf }}" class="btn btn-primary btn-lg">Unduh {{ $pengajuanDeposito->name }}</a>
+					@endforeach
+				</div>
+
+				{{ $pengajuanDepositos->links() }}
 			</div>
 
 			<div class="alert alert-primary mt-3">
@@ -168,6 +180,8 @@
 			showPengaduan()
 		}else if (opt == 3) {
 			showPengajuanTabungan()
+		}else if(opt == 4){
+			showPengajuanDeposito()
 		}
 	})
 
@@ -175,17 +189,27 @@
 		$('#formPengajuan').show()
 		$('#formPengaduan').hide()
 		$('#formPengajuanTabungan').hide()
+		$('#formPengajuanDeposito').hide()
 	}
 
 	function showPengaduan(){
 		$('#formPengajuan').hide()
 		$('#formPengajuanTabungan').hide()
 		$('#formPengaduan').show()
+		$('#formPengajuanDeposito').hide()
 	}
 
 	function showPengajuanTabungan() {
 		$('#formPengajuan').hide()
 		$('#formPengajuanTabungan').show()
+		$('#formPengaduan').hide()
+		$('#formPengajuanDeposito').hide()
+	}
+
+	function showPengajuanDeposito() {
+		$('#formPengajuan').hide()
+		$('#formPengajuanTabungan').hide()
+		$('#formPengajuanDeposito').show()
 		$('#formPengaduan').hide()
 	}
 </script>

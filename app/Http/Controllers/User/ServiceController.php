@@ -7,6 +7,7 @@ use App\Category;
 use App\Pengaduan;
 use App\Pengajuan;
 use App\PengajuanTabungan;
+use App\PengajuanDeposito;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PengaduanRequest;
@@ -19,10 +20,12 @@ class ServiceController extends Controller
     {
         $categories = Category::orderBy('created_at', 'desc')->get();
         $pengajuanTabungan = PengajuanTabungan::orderBy('name', 'asc')->paginate(12);
+        $pengajuanDeposito = PengajuanDeposito::orderBy('name', 'asc')->paginate(12);
         $content = Content::orderBy('created_at', 'desc')->limit(5)->get();
         return view('layouts.user.service', [
             'categories'            => $categories,
             'pengajuanTabungans'    => $pengajuanTabungan,
+            'pengajuanDepositos'    => $pengajuanDeposito,
             'contents'              => $content
         ]);
     }
