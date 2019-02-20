@@ -68,6 +68,9 @@
 						<p>Call Center: 021-8897.4058 -  021-8888.0699</p>
 						<p>Email: <a href="mailto:test@gmail.com">bank_pondasi@yahoo.com</a></p>
 						<p style="margin-top:-20px">Email adm: <a href="mailto:test@gmail.com">adm.bank.pondasi@gmail.com</a></p>
+						<a href="#">
+							<img src="{{ asset('img/google-play.png') }}" style="width: 120px">
+						</a>
 						<ul class="social-menu" style="margin-right:30px">
 							<li class="list-inline-item"><a href="#"><i class="fab fa-facebook-square facebook"></i></a></li>
 							<li class="list-inline-item"><a href="#"><i class="fab fa-twitter-square twitter"></i></a></li>
