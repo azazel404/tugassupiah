@@ -5,7 +5,9 @@
 	<div class="row mt-5">
 		<div class="col-md-8 col-12">
 			<h1 class="font-weight-bold">Fitur Layanan</h1>
-
+			<div class="alert alert-primary">
+					<i>"Mohon isi data - data dibawah ini agar petugas kami dapat menghubungi Anda, terima kasih"</i>
+			</div>
 			@if(Session::has('message'))
 				<div class="alert alert-success">
 					<h4>{{ Session::get('message') }}</h4>
@@ -95,6 +97,10 @@
 						<a target="__blank" href="{{ asset('storage/form_tabungan/') . '/' . $pengajuanTabungan->file_pdf }}" class="btn btn-primary btn-lg">Unduh {{ $pengajuanTabungan->name }}</a>
 					@endforeach
 				</div>
+			</div>
+
+			<div class="alert alert-primary mt-3">
+				Hanya mencover area <b>JABODETABEK</b>
 			</div>
 		</div>
 		<div class="col-md-4">
