@@ -58,6 +58,7 @@
 								@endforeach
 							</tbody>
 						</table>
+						{{ $pengajuans->links() }}
 					</div>
 				</div>
 			</div>

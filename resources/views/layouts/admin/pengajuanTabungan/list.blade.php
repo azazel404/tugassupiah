@@ -62,6 +62,7 @@
 								@endforeach
 							</tbody>
 						</table>
+						{{ $pengajuanTabungans->links() }}
 					</div>
 				</div>
 			</div>

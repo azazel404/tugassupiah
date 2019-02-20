@@ -36,6 +36,7 @@
 				</div>
 			@endforeach
 		</div>
+		{{ $slideshows->links() }}
 	</div>
 </section>
 

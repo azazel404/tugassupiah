@@ -27,7 +27,7 @@
 		</div>
 		<div class="row mt-4">
 			@foreach($contents as $content)
-				<div class="col-md-4 col-12">
+				<div class="col-md-4 col-12 mt-2">
 					<div class="card">
 						<img class="card-img-top" src="{{ asset('storage/cover/') . '/' . $content->cover }}" alt="Card image cap">
 						<div class="card-body">
@@ -42,6 +42,7 @@
 				</div>
 			@endforeach
 		</div>
+		{{ $contents->links() }}
 	</div>
 </section>
 
