@@ -4,8 +4,7 @@
 	<div class="row mt-5">
 		<div class="col-md-8 col-12">
 			<h1 class="font-weight-light">Suku Bunga</h1>
-			<img src="{{ asset('img/Banner_ATS.jpg') }}" class="img-fluid mb-4">
-
+			<br>
 			<h5 class="font-weight-bold">Jenis tabungan</h5>
 			<table class="table table-striped">
 				<thead>
