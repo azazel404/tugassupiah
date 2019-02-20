@@ -7,7 +7,7 @@
 
 			<div class="row mt-5">
 				@foreach($contents as $content)
-					<div class="col-md-6 col-12">
+					<div class="col-md-6 col-12 mt-3">
 						<div class="card">
 							<img class="card-img-top" src="{{ url('/storage/cover/' . $content->cover)  }}" alt="Card image cap">
 							<div class="card-body">
