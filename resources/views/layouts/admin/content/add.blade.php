@@ -77,7 +77,9 @@
                             <div class="form-group">
                                 <label>Konten</label>
                                 <div id="progress" class="progress">
-									<div id="progress-bar" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+									<div id="progress-bar" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+										<b id="progress-bar-value">25%</b>										
+									</div>
 								</div>
                                 <textarea id="content" name="content" style="display:none;">Hello, World!</textarea>
                                 <div id="standalone-container">
@@ -146,35 +148,11 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
 <script type="text/javascript">
-    // $(document).ready(function() {
-    //     $('#contents').summernote({
-    //         height: 300,
-    //         callbacks:{
-    //             onImageUpload: function(files, editor, welEditable){
-    //                 uploadImage(files[0], editor, welEditable);
-    //             }
-    //         }
-    //     });
-    // });
-
-    // function uploadImage(file, editor, welEditable) {
-    //     data = new FormData();
-    //     data.append("file", file);
-    //     $.ajax({
-    //         data: data,
-    //         type: "POST",
-    //         url: "/admin/upload-image",
-    //         cache: false,
-    //         contentType: false,
-    //         processData: false,
-    //         success: function(url) {
-    //             $('#content').summernote('editor.insertImage', url);
-    //         }
-    //     });
-    // }
 
     let progress = $('#progress');
     let progressBar = $('#progress-bar');
+    let progressBarValue = $('#progress-bar-value');
+
     // console.log()
     $(document).ready(function(){
     	progress.hide()
@@ -211,12 +189,12 @@
 	            withCredentials: false,
 	            headers: {},
 	            beforeSend: function() {
-					progress.show()
-		            progressBar.attr('aria-valuenow', '0')
-		        },
-		        uploadProgress: function(event, position, total, percentComplete) {
-		        	progressBar.attr('aria-valuenow', percentComplete)
-		        },
+	            	progress.show()
+	            	progressBarValue.text('0%')
+	            },
+	            uploadProgress: function(event, position, total, percentComplete) {
+	            	progressBar.attr('aria-valuenow', percentComplete)
+	            },
 	            callbackOK: (serverResponse, next) => {
 	                next(serverResponse.responseText);
 	            },
