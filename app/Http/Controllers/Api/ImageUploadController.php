@@ -15,6 +15,11 @@ class ImageUploadController extends Controller
             $file = $req->file->store('public/content');
         }
 
-        return '/storage/content/'.basename($file);
+        // return '/storage/content/'.basename($file);
+        return response()->json([
+        	"code" => 200,
+        	"statusText" => "OKE!",
+        	"responseText" => '/storage/content/'.basename($file)
+        ]);
     }
 }
