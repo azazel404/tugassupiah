@@ -70,11 +70,11 @@
 							</div>
                             <div class="form-group">
                                 <label>Konten</label>
-                                <div id="progress" class="progress">
+                                <!-- <div id="progress" class="progress">
 									<div id="progress-bar" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
 										<b id="progress-bar-value">25%</b>										
 									</div>
-								</div>
+								</div> -->
                                 <textarea id="content" name="content" style="display:none;">{{ $content->content }}</textarea>
                                 <div id="standalone-container">
                                 	<div id="toolbar-container">
