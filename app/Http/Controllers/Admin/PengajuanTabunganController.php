@@ -27,6 +27,15 @@ class PengajuanTabunganController extends Controller
     	return back();
     }
 
+    public function updatePengajuanTabungan(Request $req)
+    {
+        $pengajuanTabungan = PengajuanTabungan::find($req->id);
+        $pengajuanTabungan->name = $req->name;
+        $pengajuanTabungan->save();
+
+        return back();
+    }
+
     public function deletePengajuanTabungan($id)
     {
     	$pengajuanTabungan = PengajuanTabungan::findOrFail($id);

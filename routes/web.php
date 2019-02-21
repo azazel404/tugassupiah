@@ -114,12 +114,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 	Route::group(['prefix' => 'pengajuan-tabungan'], function(){
 		Route::get('/', 'Admin\PengajuanTabunganController@index')->name('admin.pengajuan.tabungan');
 		Route::post('/add', 'Admin\PengajuanTabunganController@addPengajuanTabungan')->name('admin.pengajuan.tabungan.add');
+		Route::post('/edit', 'Admin\PengajuanTabunganController@updatePengajuanTabungan')->name('admin.pengajuan.tabungan.edit');
 		Route::get('/delete/{id}', 'Admin\PengajuanTabunganController@deletePengajuanTabungan')->name('admin.pengajuan.tabungan.delete');
 	});
 
 	Route::group(['prefix' => 'pengajuan-deposito'], function(){
 		Route::get('/', 'Admin\PengajuanDepositoController@index')->name('admin.pengajuan.deposito');
 		Route::post('/add', 'Admin\PengajuanDepositoController@addPengajuanDeposito')->name('admin.pengajuan.deposito.add');
+		Route::post('/edit', 'Admin\PengajuanDepositoController@updatePengajuanDeposito')->name('admin.pengajuan.deposito.edit');
 		Route::get('/delete/{id}', 'Admin\PengajuanDepositoController@deletePengajuanDeposito')->name('admin.pengajuan.deposito.delete');
 	});
 

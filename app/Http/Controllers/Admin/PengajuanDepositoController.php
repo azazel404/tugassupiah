@@ -27,6 +27,15 @@ class PengajuanDepositoController extends Controller
     	return back();
     }
 
+    public function updatePengajuanDeposito(Request $req)
+    {
+        $pengajuanDeposito = PengajuanDeposito::find($req->id);
+        $pengajuanDeposito->name = $req->name;
+        $pengajuanDeposito->save();
+
+        return back();
+    }
+
     public function deletePengajuanDeposito($id)
     {
     	$pengajuanDeposito = PengajuanDeposito::findOrFail($id);

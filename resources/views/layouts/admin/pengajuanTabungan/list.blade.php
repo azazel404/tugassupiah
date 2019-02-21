@@ -57,6 +57,7 @@
 										</td>
 										<td>
 											<a href="{{ route('admin.pengajuan.tabungan.delete', $pengajuanTabungan->id) }}" class="btn btn-danger">Hapus</a>
+											<a id="btnEdit" href="javascript:void(0)" class="btn btn-primary" data-id="{{ $pengajuanTabungan->id }}" data-name="{{ $pengajuanTabungan->name }}">Edit</a>
 										</td>
 									</tr>
 								@endforeach
@@ -70,44 +71,6 @@
 	</div>
 </section>
 
-
-<div class="modal fade bd-example-modal-lg" id="modalDetailPengajuan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Pengajuan selesai</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-	  <div class="modal-body">
-        <form>
-			<div class="form-row">
-				<div class="form-group col">
-					<label>Nama lengkap</label>
-					<input id="edtName" type="text" value="" class="form-control" disabled>
-				</div>
-				<div class="form-group col">
-					<label>Telepon</label>
-					<input id="edtTelepon" type="text" value="" class="form-control" disabled>
-				</div>
-			</div>
-			<div class="form-group">
-				<label>Email</label>
-				<input id="edtEmail" type="text" value="" class="form-control" disabled>
-			</div>
-			<div class="form-group col">
-				<label>Alamat</label>
-				<textarea id="edtAddress" rows="4" cols="80" class="form-control" disabled></textarea>
-			</div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
@@ -139,21 +102,28 @@
 	</div>
 </div>
 
-<div class="modal fade" id="modalDonePengajuan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Pengajuan selesai</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Edit pengajuan tabungan</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				<h5 class="font-weight-light">Pengajuan ini selesai ?</h5>
+				<form id="formEdit" method="post" action="{{ route('admin.pengajuan.tabungan.edit') }}">
+					@csrf
+					<input id="edtId" type="hidden" name="id">
+					<div class="form-group">
+						<label>Nama File</label>
+						<input id="edtName" type="text" name="name" class="form-control">
+					</div>
+				</form>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
-				<a id="donePengajuan" href="" class="btn btn-success">Selesai</a>
+				<button form="formEdit" type="submit" class="btn btn-primary">Simpan</button>
 			</div>
 		</div>
 	</div>
@@ -172,12 +142,10 @@
 		$('#modalAdd').modal('show');
 	})
 
-	$(document).on('click', '#btnDetailPengajuan', function(){
+	$(document).on('click', '#btnEdit', function(){
+		$('#edtId').val($(this).data('id'))
 		$('#edtName').val($(this).data('name'))
-		$('#edtTelepon').val($(this).data('telephone'))
-		$('#edtEmail').val($(this).data('email'))
-		$('#edtAddress').val($(this).data('address'))
-		$('#modalDetailPengajuan').modal('show');
+		$('#modalEdit').modal('show');
 	})
 </script>
 @endsection
