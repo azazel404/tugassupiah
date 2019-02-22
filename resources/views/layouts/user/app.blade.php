@@ -68,6 +68,9 @@
 						<p>Call Center: 021-8897.4058 -  021-8888.0699</p>
 						<p>Email: <a href="mailto:test@gmail.com">bank_pondasi@yahoo.com</a></p>
 						<p style="margin-top:-20px">Email adm: <a href="mailto:test@gmail.com">adm.bank.pondasi@gmail.com</a></p>
+						<div class="alert alert-primary mt-3">
+							Hanya mencover area <b>JABODETABEK</b>
+						</div>
 						<a href="#">
 							<img src="{{ asset('img/google-play.png') }}" style="width: 120px">
 						</a>

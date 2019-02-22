@@ -62,11 +62,9 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
 
-        if (!Content::where('category_id', $id)->delete()) {
+        if (!$category->delete()) {
             return back()->with('error', 'something went wrong');
         }
-
-        $category->delete();
 
         return back();
     }
@@ -106,11 +104,9 @@ class CategoryController extends Controller
     {
         $category = CategoryItem::find($id);
 
-        if (!Content::where('category_id', $id)->delete()) {
+        if (!$category->delete()) {
             return back()->with('error', 'something went wrong');
         }
-
-        $category->delete();
 
         return back();
     }

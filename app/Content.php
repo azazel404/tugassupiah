@@ -12,11 +12,15 @@ class Content extends Model
 
     public function category()
     {
-        return $this->belongsTo('App\Category');
+        return $this->belongsTo('App\Category')->withDefault([
+            "name" => " ",
+        ]);
     }
 
     public function categoryItem()
     {
-        return $this->belongsTo('App\CategoryItem');
+        return $this->belongsTo('App\CategoryItem')->withDefault([
+            "name" => " ",
+        ]);
     }
 }
