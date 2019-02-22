@@ -29,7 +29,7 @@
 			@foreach($contents as $content)
 				<div class="col-md-4 col-12 mt-2">
 					<div class="card">
-						<img class="card-img-top" src="{{ asset('storage/cover/') . '/' . $content->cover }}" alt="Card image cap">
+						<img class="card-img-top" src="{{ asset('storage/cover/') . '/' . $content->cover }}" alt="Card image cap" style="width:100%;height:190px">
 						<div class="card-body">
 							<h5 class="card-title">{{ $content->title }}</h5>
 							<small class="text-grey">{{ $content->category->name }} {{ (isset($content->CategoryItem->name) ? ' > ' . $content->CategoryItem->name : '') }} | {{ $content->created_at->diffForHumans() }}</small>

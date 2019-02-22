@@ -69,7 +69,7 @@
 		@foreach($contents as $content)
 			<div class="col-md-4 col-12">
 				<div class="card">
-					<img class="card-img-top" src="{{ url('/storage/cover/' . $content->cover) }}" alt="{{ $content->title }}" style="height: 220px;">
+					<img class="card-img-top" src="{{ url('/storage/cover/' . $content->cover) }}" alt="{{ $content->title }}" style="width:100%;height:190px">
 					<div class="card-body">
 						<h5 class="card-title">{{ $content->title }}</h5>
 						<a href="{{ route('content.detail', $content->slug) }}" class="btn btn-primary">Read more.</a>
