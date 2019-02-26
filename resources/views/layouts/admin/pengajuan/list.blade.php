@@ -23,6 +23,9 @@
 		<div class="row">
 			<div class="col-md-12 col-12">
 				<div class="card">
+					<div class="card-header">
+						<a href="{{ route('admin.tipeKredit') }}" class="btn btn-primary float-right">Tambah Jenis Kredit</a>
+					</div>
 					<div class="card-body">
 						<table class="table table-striped">
 							<thead>
