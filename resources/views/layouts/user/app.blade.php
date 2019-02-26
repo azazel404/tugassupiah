@@ -54,7 +54,7 @@
 	</div>
 	<div class="container">
 		<div class="alert alert-danger mt-3">
-			Hanya mencover area <b>JABODETABEK</b>
+			Hanya mengcover  Area <b>Jabodetabek</b>
 		</div>
 	</div>
 	@yield('content')
