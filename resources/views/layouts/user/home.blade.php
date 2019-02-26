@@ -86,22 +86,23 @@
 	</div>
 
 	<div class="row mt-2">
-		<div class="col-md-3 col-5 brand-responsive">
+		<div class="col-md-3 col-5 brand-responsive mt-4">
 			<a href="https://www.ojk.go.id/id/Default.aspx">
 				<img class="img-fluid d-block mx-auto" src="{{ asset('img/OJK-logo-baru.jpg') }}" alt="">
 			</a>
 		</div>
 		<div class="col-md-3 col-5 brand-responsive">
+			<label>Simpanan BPR Pondasi dijamin oleh :</label>
 			<a href="http://www.lps.go.id/">
 				<img class="img-fluid d-block mx-auto" src="{{ asset('img/LPS-logo-baru.png') }}" alt="">
 			</a>
 		</div>
-		<div class="col-md-3 col-5 brand-responsive">
+		<div class="col-md-3 col-5 brand-responsive mt-4">
 			<a href="https://www.bi.go.id/id/Default.aspx">
 				<img class="img-fluid d-block mx-auto" src="{{ asset('img/lobo-bi-baru.png') }}" alt="">
 			</a>
 		</div>
-		<div class="col-md-3 col-5 brand-responsive">
+		<div class="col-md-3 col-5 brand-responsive mt-4">
 			<a href="http://ayokebank.com/">
 				<img class="img-fluid d-block mx-auto" src="{{ asset('img/logo-ayo-ke-bank.png') }}" alt="">
 			</a>

@@ -1,16 +1,17 @@
-@extends('layouts.admin.app')
+]@extends('layouts.admin.app')
 @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0 text-dark">Pengajuan Tabungan</h1>
+				<h1 class="m-0 text-dark">Tipe Kredit</h1>
 			</div><!-- /.col -->
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-					<li class="breadcrumb-item active">Pengajuan Tabungan</li>
+					<li class="breadcrumb-item"><a href="#">Pengajuan</a></li>
+					<li class="breadcrumb-item active">Tipe Kredit</li>
 				</ol>
 			</div><!-- /.col -->
 		</div><!-- /.row -->
@@ -22,48 +23,32 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12 col-12">
-				@if($errors->any())
-					<div class="alert alert-danger">
-						<ul class="list-unstyled">
-							@foreach($errors->all() as $error)
-								<li>{{ $error }}</li>
-							@endforeach
-						</ul>
-					</div>
-				@endif
 				<div class="card">
 					<div class="card-header">
-						<a id="btnAddNew" href="javascript:void(0)" class="btn btn-primary float-right">+ add new</a>
+						<a id="btnAdd" href="javascript:void(0)" class="btn btn-primary float-right">+ add new</a>
 					</div>
 					<div class="card-body">
 						<table class="table table-striped">
 							<thead>
 								<tr>
-									<th>Nama File</th>
-									<th>Link File</th>
-									<th>Status</th>
+									<th>Nama</th>
+									<th>Created@</th>
 									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody>
-								@foreach($pengajuanTabungans as $pengajuanTabungan)
+								@foreach($tipeKredits as $tipeKredit)
 									<tr>
-										<td>{{ $pengajuanTabungan->name }}</td>
+										<td>{{ $tipeKredit->name }}</td>
+										<td>{{ $tipeKredit->created_at }}</td>
 										<td>
-											<a target="__blank" href="{{ asset('storage/form_tabungan/') . '/' . $pengajuanTabungan->file_pdf }}">Download</a>
-										</td>
-										<td>
-											<span class="badge {{ $pengajuanTabungan->status == 1 ? 'badge-success' : 'badge-danger' }}">{{ $pengajuanTabungan->status == 1 ? 'AKTIF' : 'TIDAK AKTIF'}}</span>
-										</td>
-										<td>
-											<a href="{{ route('admin.pengajuan.tabungan.delete', $pengajuanTabungan->id) }}" class="btn btn-danger">Hapus</a>
-											<a id="btnEdit" href="javascript:void(0)" class="btn btn-primary" data-id="{{ $pengajuanTabungan->id }}" data-name="{{ $pengajuanTabungan->name }}">Edit</a>
+											<button id="btnEdit" class="btn btn-primary" data-id="{{ $tipeKredit->id }}" data-name="{{ $tipeKredit->name }}">Edit</button>
+											<a href="{{ route('admin.tipeKredit.delete', $tipeKredit->id) }}" class="btn btn-danger">Hapus</a>
 										</td>
 									</tr>
 								@endforeach
 							</tbody>
 						</table>
-						{{ $pengajuanTabungans->links() }}
 					</div>
 				</div>
 			</div>
@@ -71,32 +56,27 @@
 	</div>
 </section>
 
-
 <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Tambah pengajuan tabungan</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Tambah Kategori</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				<form id="addPengajuan" method="post" action="{{ route('admin.pengajuan.tabungan.add') }}" enctype="multipart/form-data">
+				<form id="formAdd" action="{{ route('admin.tipeKredit.add') }}" method="post">
 					@csrf
 					<div class="form-group">
-						<label>Nama File</label>
+						<label>Nama Tipe Kredit</label>
 						<input type="text" name="name" class="form-control">
-					</div>
-					<div class="form-group">
-						<label>File Pdf</label>
-						<input type="file" name="file_pdf" class="form-control">
 					</div>
 				</form>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-				<button form="addPengajuan" type="submit" class="btn btn-primary">Tambahkan</button>
+				<button form="formAdd" type="submit" class="btn btn-success">Tambah</button>
 			</div>
 		</div>
 	</div>
@@ -106,24 +86,24 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Edit pengajuan tabungan</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Pengajuan selesai</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				<form id="formEdit" method="post" action="{{ route('admin.pengajuan.tabungan.edit') }}">
+				<form id="formAdd" action="{{ route('admin.tipeKredit.edit') }}" method="post">
 					@csrf
 					<input id="edtId" type="hidden" name="id">
 					<div class="form-group">
-						<label>Nama File</label>
+						<label>Nama Tipe Kredit</label>
 						<input id="edtName" type="text" name="name" class="form-control">
 					</div>
 				</form>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
-				<button form="formEdit" type="submit" class="btn btn-primary">Simpan</button>
+				<a id="donePengajuan" href="" class="btn btn-success">Selesai</a>
 			</div>
 		</div>
 	</div>
@@ -133,13 +113,9 @@
 
 @section('script')
 <script type="text/javascript">
-	$(document).on('click', '#btnDonePengajuan', function(){
-		$('#donePengajuan').attr('href', '/admin/pengajuan/delete/' + $(this).data('id'))
-		$('#modalDonePengajuan').modal('show')
-	})
 
-	$(document).on('click', '#btnAddNew', function(){
-		$('#modalAdd').modal('show');
+	$(document).on('click', '#btnAdd', function(){
+		$('#modalAdd').modal('show')
 	})
 
 	$(document).on('click', '#btnEdit', function(){

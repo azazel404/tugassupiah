@@ -109,6 +109,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 	Route::group(['prefix' => 'pengajuan'], function(){
 		Route::get('/', 'Admin\PengajuanController@index')->name('admin.pengajuan');
 		Route::get('/delete/{id}', 'Admin\PengajuanController@deletePengajuan');
+		Route::group(['prefix' => 'tipe-kredit'], function(){
+			Route::get('/', 'Admin\PengajuanController@listTipeKredit')->name('admin.tipeKredit');
+			Route::post('/add', 'Admin\PengajuanController@createTipeKredit')->name('admin.tipeKredit.add');
+			Route::post('/edit', 'Admin\PengajuanController@editTipeKredit')->name('admin.tipeKredit.edit');
+			Route::get('/delete/{id}', 'Admin\PengajuanController@deleteTipeKredit')->name('admin.tipeKredit.delete');
+		});
 	});
 
 	Route::group(['prefix' => 'pengajuan-tabungan'], function(){
