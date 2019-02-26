@@ -81,31 +81,47 @@
 
 	<div class="row mt-7">
 		<div class="col-md-12 col-12">
-			<h6>BPR PONDASI terdaftar dan diawasi oleh:</h6>
+			<h4>BPR PONDASI terdaftar dan diawasi oleh:</h4>
+			<h6 class="mt-4">Simpanan BPR Pondasi dijamin oleh :</h6>
 		</div>
 	</div>
 
 	<div class="row mt-2">
-		<div class="col-md-3 col-5 brand-responsive mt-4">
-			<a href="https://www.ojk.go.id/id/Default.aspx">
-				<img class="img-fluid d-block mx-auto" src="{{ asset('img/OJK-logo-baru.jpg') }}" alt="">
-			</a>
+		<div class="col-md-3 col-5 brand-responsive">
+			<div class="card">
+				<div class="card-body">
+					<a href="http://www.lps.go.id/">
+						<img class="img-fluid d-block mx-auto" src="{{ asset('img/LPS-logo-baru.png') }}" alt="">
+					</a>
+				</div>
+			</div>
 		</div>
 		<div class="col-md-3 col-5 brand-responsive">
-			<label>Simpanan BPR Pondasi dijamin oleh :</label>
-			<a href="http://www.lps.go.id/">
-				<img class="img-fluid d-block mx-auto" src="{{ asset('img/LPS-logo-baru.png') }}" alt="">
-			</a>
+			<div class="card">
+				<div class="card-body">
+					<a href="https://www.ojk.go.id/id/Default.aspx">
+						<img class="img-fluid d-block mx-auto" src="{{ asset('img/OJK-logo-baru.jpg') }}" alt="">
+					</a>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-3 col-5 brand-responsive mt-4">
-			<a href="https://www.bi.go.id/id/Default.aspx">
-				<img class="img-fluid d-block mx-auto" src="{{ asset('img/lobo-bi-baru.png') }}" alt="">
-			</a>
+		<div class="col-md-3 col-5 brand-responsive">
+			<div class="card">
+				<div class="card-body">
+					<a href="https://www.bi.go.id/id/Default.aspx">
+						<img class="img-fluid d-block mx-auto" src="{{ asset('img/lobo-bi-baru.png') }}" alt="">
+					</a>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-3 col-5 brand-responsive mt-4">
-			<a href="http://ayokebank.com/">
-				<img class="img-fluid d-block mx-auto" src="{{ asset('img/logo-ayo-ke-bank.png') }}" alt="">
-			</a>
+		<div class="col-md-3 col-5 brand-responsive">
+			<div class="card">
+				<div class="card-body">
+					<a href="http://ayokebank.com/">
+						<img class="img-fluid d-block mx-auto" src="{{ asset('img/logo-ayo-ke-bank.png') }}" alt="">
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
