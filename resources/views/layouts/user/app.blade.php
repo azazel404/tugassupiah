@@ -53,8 +53,8 @@
 		</nav>
 	</div>
 	<div class="container">
-		<div class="alert alert-danger mt-3">
-			Hanya mencover area <b>JABODETABEK</b>
+		<div class="text-center" style="color:red">
+			Cover Area Jabodetabek
 		</div>
 	</div>
 	@yield('content')
