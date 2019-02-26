@@ -59,7 +59,7 @@
 					<textarea cols="3" rows="8" name="message" class="form-control"></textarea>
 				</div>
 
-				<button type="submit" class="btn btn-primary btn-block">Submit</button>
+				<button type="submit" class="btn btn-primary btn-block">Kirim</button>
 			</form>
 
 			<form id="formPengajuan" action="{{ route('service.pengajuan') }}" method="post">
