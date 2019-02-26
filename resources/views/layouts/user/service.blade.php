@@ -66,7 +66,11 @@
 				@csrf
 				<div class="form-group">
 					<label>Tipe Kredit</label>
-					<input type="text" name="tipe_kredit" class="form-control" placeholder="Kredit Maha Asyik">
+					<select class="form-control" name="tipe_kredit">
+						@foreach($tipeKredits as $tipeKredit)
+							<option value="{{ $tipeKredit->name }}">{{ $tipeKredit->name }}</option>
+						@endforeach
+					</select>
 				</div>
 				<div class="form-row">
 					<div class="form-group col">

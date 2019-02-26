@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Content;
 use App\Category;
 use App\Pengaduan;
+use App\TipeKredit;
 use App\Pengajuan;
 use App\PengajuanTabungan;
 use App\PengajuanDeposito;
@@ -22,11 +23,13 @@ class ServiceController extends Controller
         $pengajuanTabungan = PengajuanTabungan::orderBy('name', 'asc')->paginate(12);
         $pengajuanDeposito = PengajuanDeposito::orderBy('name', 'asc')->paginate(12);
         $content = Content::orderBy('created_at', 'desc')->limit(5)->get();
+        $tipeKredit = TipeKredit::orderBy('name', 'asc')->get();
         return view('layouts.user.service', [
             'categories'            => $categories,
             'pengajuanTabungans'    => $pengajuanTabungan,
             'pengajuanDepositos'    => $pengajuanDeposito,
-            'contents'              => $content
+            'contents'              => $content,
+            'tipeKredits'           => $tipeKredit
         ]);
     }
 
