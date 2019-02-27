@@ -72,7 +72,7 @@
 					<img class="card-img-top" src="{{ url('/storage/cover/' . $content->cover) }}" alt="{{ $content->title }}" style="width:100%;height:190px">
 					<div class="card-body">
 						<h5 class="card-title">{{ $content->title }}</h5>
-						<a href="{{ route('content.detail', $content->slug) }}" class="btn btn-primary">Read more.</a>
+						<a href="{{ route('content.detail', $content->slug) }}" class="btn btn-primary btn-block">Lihat Detail</a>
 					</div>
 				</div>
 			</div>
@@ -80,24 +80,18 @@
 	</div>
 
 	<div class="row mt-7">
-		<div class="col-md-12 col-12">
-			<h4>BPR PONDASI terdaftar dan diawasi oleh:</h4>
-			<h6 class="mt-4">Simpanan BPR Pondasi dijamin oleh :</h6>
+		<div class="col-md-3 col-12">
+				<h6 class="mt-4" style="font-size:12px">BPR PONDASI terdaftar dan diawasi oleh :</h6>	
+			</div>
+		<div class="col-md-3 col-12">
+			<h6 class="mt-4" style="font-size:12px">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Simpanan BPR Pondasi dijamin oleh :</h6>
 		</div>
 	</div>
 
 	<div class="row mt-2">
+	
 		<div class="col-md-3 col-5 brand-responsive">
-			<div class="card">
-				<div class="card-body">
-					<a href="http://www.lps.go.id/">
-						<img class="img-fluid d-block mx-auto" src="{{ asset('img/LPS-logo-baru.png') }}" alt="">
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3 col-5 brand-responsive">
-			<div class="card">
+			<div >
 				<div class="card-body">
 					<a href="https://www.ojk.go.id/id/Default.aspx">
 						<img class="img-fluid d-block mx-auto" src="{{ asset('img/OJK-logo-baru.jpg') }}" alt="">
@@ -106,7 +100,17 @@
 			</div>
 		</div>
 		<div class="col-md-3 col-5 brand-responsive">
-			<div class="card">
+			<div >
+				<div class="card-body">
+					<a href="http://www.lps.go.id/">
+						<img class="img-fluid d-block mx-auto" src="{{ asset('img/LPS-logo-baru.png') }}" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+	
+		<div class="col-md-3 col-5 brand-responsive">
+			<div >
 				<div class="card-body">
 					<a href="https://www.bi.go.id/id/Default.aspx">
 						<img class="img-fluid d-block mx-auto" src="{{ asset('img/lobo-bi-baru.png') }}" alt="">
@@ -115,7 +119,7 @@
 			</div>
 		</div>
 		<div class="col-md-3 col-5 brand-responsive">
-			<div class="card">
+			<div >
 				<div class="card-body">
 					<a href="http://ayokebank.com/">
 						<img class="img-fluid d-block mx-auto" src="{{ asset('img/logo-ayo-ke-bank.png') }}" alt="">

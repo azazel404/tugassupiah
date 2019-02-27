@@ -29,9 +29,9 @@
 			<div class="form-group">
 				<label>Perihal</label>
 				<select id="slcPrihal" class="form-control" on>
-					<option value="1">Pengajuan Kredit</option>
-					<option value="3">Pengajuan Tabungan</option>
-					<option value="4">Pengajuan Deposito</option>
+					<option value="1">Pengajuan Permohonan Kredit / Pinjaman</option>
+					<option value="3">Pengajuan Pembukaan Rekening Tabungan</option>
+					<option value="4">Pengajuan Pembukaan Rekening Deposito</option>
 					<option value="2">Pengaduan</option>
 				</select>
 			</div>

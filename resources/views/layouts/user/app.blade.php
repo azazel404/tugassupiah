@@ -53,14 +53,19 @@
 		</nav>
 	</div>
 	<div class="container">
-		<div class="alert alert-danger mt-3">
-			Hanya mengcover  Area <b>Jabodetabek</b>
+		<div class="text-center" style="color:red">
+			Cover Area Jabodetabek
 		</div>
 	</div>
 	@yield('content')
+	
+	<div>
+	<!-- bagian sini blomsolverd -->
+	<p>hubungi kami by</p>
 	<a target="__blank" href="https://api.whatsapp.com/send?phone=6281354915553&text=Halo BPR PONDASI NIAGA PERDANA, saya disini ingin menyampaikan untuk pengajuan kredit di BPR PONDASI" class="float">
 		<img src="{{ asset('img/chat.png') }}" style="width: 100%;fill: #fff;">
 	</a>
+	</div>
 	<footer class="main-footer mt-9">
 		<div class="container">
 			<div class="row">

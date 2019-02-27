@@ -12,7 +12,7 @@
 							<img class="card-img-top" src="{{ url('/storage/cover/' . $content->cover)  }}" alt="Card image cap" style="width:100%;height:190px">
 							<div class="card-body">
 								<h5 class="card-title">{{ $content->title }}</h5>
-								<a href="{{ route('content.detail', $content->slug) }}" class="btn btn-primary">Go somewhere</a>
+								<a href="{{ route('content.detail', $content->slug) }}" class="btn btn-primary btn-block">Lihat Detail</a>
 							</div>
 						</div>
 					</div>
