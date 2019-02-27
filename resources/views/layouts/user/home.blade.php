@@ -81,22 +81,13 @@
 
 	<div class="row mt-7">
 		<div class="col-md-12 col-12">
-			<h4>BPR PONDASI terdaftar dan diawasi oleh:</h4>
-			<h6 class="mt-4">Simpanan BPR Pondasi dijamin oleh :</h6>
+			
 		</div>
 	</div>
 
 	<div class="row mt-2">
 		<div class="col-md-3 col-5 brand-responsive">
-			<div class="card">
-				<div class="card-body">
-					<a href="http://www.lps.go.id/">
-						<img class="img-fluid d-block mx-auto" src="{{ asset('img/LPS-logo-baru.png') }}" alt="">
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3 col-5 brand-responsive">
+			<h6>BPR PONDASI terdaftar dan diawasi oleh:</h6>
 			<div class="card">
 				<div class="card-body">
 					<a href="https://www.ojk.go.id/id/Default.aspx">
@@ -105,7 +96,17 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3 col-5 brand-responsive">
+		<div class="col-md-3 col-5 brand-responsive mt-3">
+			<h6>Simpanan BPR Pondasi dijamin oleh :</h6>
+			<div class="card">
+				<div class="card-body">
+					<a href="http://www.lps.go.id/">
+						<img class="img-fluid d-block mx-auto" src="{{ asset('img/LPS-logo-baru.png') }}" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-5 brand-responsive mt-5">
 			<div class="card">
 				<div class="card-body">
 					<a href="https://www.bi.go.id/id/Default.aspx">
@@ -114,7 +115,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3 col-5 brand-responsive">
+		<div class="col-md-3 col-5 brand-responsive mt-5">
 			<div class="card">
 				<div class="card-body">
 					<a href="http://ayokebank.com/">
