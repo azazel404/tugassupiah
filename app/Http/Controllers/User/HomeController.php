@@ -51,7 +51,8 @@ class HomeController extends Controller
 
     public function sukuBunga()
     {
-        $sukuBunga = SukuBunga::orderBy('name', 'asc')->paginate(18);
+        // orderBy('name', 'asc')->
+        $sukuBunga = SukuBunga::paginate(18);
         $content = Content::orderBy('created_at', 'desc')->limit(5)->get();
         return view('layouts.user.sukuBunga', [
             'SukuBungas' => $sukuBunga,
