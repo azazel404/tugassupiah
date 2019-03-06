@@ -114,10 +114,6 @@
 
 				{{ $pengajuanDepositos->links() }}
 			</div>
-
-			<div class="alert alert-primary mt-3">
-				Hanya mencover area <b>JABODETABEK</b>
-			</div>
 		</div>
 		<div class="col-md-4">
 			<!-- <div class="card blue">

@@ -25,7 +25,6 @@ class SlideshowRequest extends FormRequest
     {
         return [
             "image"         => "required|mimes:jpeg,jpg,bmp,png",
-            "content_id"    => "required|integer"
         ];
     }
 

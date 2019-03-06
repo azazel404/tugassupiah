@@ -40,6 +40,7 @@
 							<div class="form-group">
 								<label>Pilih Konten</label>
 								<select class="js-example-basic-single form-control" name="content_id">
+									<option value="0">Tanpa Konten</option>
 									@foreach($contents as $content)
 										<option value="{{ $content->id }}">{{ $content->title }}</option>
 									@endforeach
