@@ -5,19 +5,16 @@
 		<div class="col-md-8 col-12">
 			<h1 class="font-weight-light">Suku Bunga</h1>
 			<br>
-			<h5 class="font-weight-bold">Jenis tabungan</h5>
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>No</th>
-						<th>Jenis tabungan</th>
+						<th>Suku Bunga</th>
 						<th>Bunga p.a</th>
 					</tr>
 				</thead>
 				<tbody>
 			@foreach($SukuBungas as $key => $sukuBunga)
 						<tr>
-							<td>{{ $key+1 }}</td>
 							<td>{{ $sukuBunga->name }}</td>
 							<td>{{ $sukuBunga->value }}</td>
 						</tr>
