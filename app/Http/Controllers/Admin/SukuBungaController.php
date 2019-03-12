@@ -12,7 +12,7 @@ class SukuBungaController extends Controller
     //
     public function index()
     {
-        $sukuBunga = SukuBunga::orderBy('name', 'asc')->paginate(18);
+        $sukuBunga = SukuBunga::orderBy('name')->paginate(10);
         return view('layouts.admin.sukuBunga.list', ['sukuBungas' => $sukuBunga]);
     }
 
