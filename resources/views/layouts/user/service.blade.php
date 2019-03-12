@@ -169,7 +169,7 @@
 <script type="text/javascript">
 
 	$(document).ready(function(){
-		showPengaduan()
+		showPengajuanTabungan()
 	})
 
 	$(document).on('change', '#slcPrihal', function(){
