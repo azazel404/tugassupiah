@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Content;
 use App\Category;
+use App\SukuBunga;
 use App\CompanyProfile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -30,5 +31,13 @@ class MobileContentController extends Controller
     {
         $content = Content::find($id);
         return view('layouts.mobile.content', ['content' => $content]);
+    }
+
+    public function getSukuBunga()
+    {
+        $sukuBunga = SukuBunga::paginate(18);
+        return view('layouts.mobile.sukuBunga', [
+            'SukuBungas' => $sukuBunga,
+        ]);
     }
 }

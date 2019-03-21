@@ -28,6 +28,8 @@ Route::get('/content/err/404', 'User\ContentController@contentNotFound')->name('
 Route::get('/mobile/profile', 'User\MobileContentController@getCompanyProfile');
 Route::get('/mobile/product', 'User\MobileContentController@getAllProduct');
 Route::get('/mobile/d/{id}' , 'User\MobileContentController@getDetailContent')->name('mobile.content.detail');
+Route::get('/mobile/suku-bunga' , 'User\MobileContentController@getSukuBunga')->name('mobile.sukubunga');
+
 // ROute::get('/content', 'User\HomeController@content');
 
 Route::group(['prefix' => 'service'], function(){
