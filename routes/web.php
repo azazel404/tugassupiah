@@ -58,6 +58,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 			Route::get('/activate/{id}', 'Admin\AdminController@activateAdminAccount')->name('admin.manage-account.admin.activate');
 			Route::get('/banned/{id}', 'Admin\AdminController@bannedAdminAccount')->name('admin.manage-account.admin.banned');
 		});
+
+		Route::group(['prefix' => 'nasabah'], function(){
+			Route::get('/', 'Admin\NasabahController@index')->name('admin.manage-account.nasabah');
+		});
 	});
 
 	Route::group(['prefix' => 'marketing'], function(){

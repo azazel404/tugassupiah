@@ -42,7 +42,7 @@ return [
         ],
 
         'nasabah' => [
-            'driver' => 'session',
+            'driver' => 'token',
             'provider' => 'nasabahs',
         ],
 

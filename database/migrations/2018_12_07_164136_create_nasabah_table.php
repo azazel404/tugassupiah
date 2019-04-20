@@ -15,12 +15,13 @@ class CreateNasabahTable extends Migration
     {
         Schema::create('nasabahs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code_customer');
+            // $table->string('code_customer');
             $table->string('rekening');
             $table->string('fullname');
             $table->string('email', 120)->unique();
             $table->text('address')->nullable();
-            $table->string('token', 64)->unique()->nullable();
+            $table->date('registration');
+            $table->string('api_token')->unique()->nullable();
             $table->string('password');
             $table->boolean('is_active');
             $table->rememberToken();

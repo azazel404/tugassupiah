@@ -16,6 +16,7 @@ class ApiGuardNasabah
      */
     public function handle($request, Closure $next)
     {
+        echo $request->header('Authorization');
         if (Nasabah::where('token', $request->token)->first()) {
             return $next($request);
         }

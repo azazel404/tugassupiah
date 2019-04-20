@@ -160,7 +160,7 @@
 	          	</li>
 	          	<li class="nav-header">Management Account</li>
 	          	<li class="nav-item">
-	          		<a href="{{ route('admin.maintain') }}" class="nav-link">
+	          		<a href="{{ route('admin.manage-account.nasabah') }}" class="nav-link">
 	          			<i class="nav-icon fa fa-calendar"></i>
 	          			<p>
 	          				Account Nasabah
