@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use Auth;
+use Hash;
 use App\Nasabah;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -13,30 +14,22 @@ class AuthController extends Controller
     //fungsi untuk login api android
     public function login(LoginRequest $req)
     {
-    	$credential = ["email" => $req->email, "password" => $req->password];
+        $nasabah = Nasabah::whereEmail($req->email)->first();
 
-    	if (Auth::guard('nasabah')->once($credential)) {
-    		$token = base64_encode(str_random(64));
-    		
-    		$user = Nasabah::where('email', $req->email)->first();
-    		$user->token = $token;
+        if ($nasabah && Hash::check($req->password, $nasabah->password)) {
+            $token = base64_encode(str_random(64));
+            $nasabah->api_token = $token;
 
-    		if ($user->save()) {
-    			return response()->json([
-    				"message" 	=> "OKE!",
-    				"status" 	=> 200,
-    				"data" 		=> [
-    					"token" => $token
-    				]
-    			]);
-    		}
-
-    		return response()->json([
-    			"message" 	=> "oops.. looks like something went wrong",
-    			"status" 	=> 500,
-    			"data" 		=> []
-    		]);
-    	}
+            if ($nasabah->save()) {
+                return response()->json([
+                    "message"   => "OKE!",
+                    "status"    => 200,
+                    "data"      => [
+                        "api_token" => $token
+                    ]
+                ]);
+            }
+        }
 
     	return response()->json([
     		"message" 	=> "wrong username or password",
