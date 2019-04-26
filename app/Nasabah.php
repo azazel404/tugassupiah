@@ -25,6 +25,16 @@ class Nasabah extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', "id"
     ];
+
+    public function balance()
+    {
+        return $this->hasOne("App\Balance");
+    }
+
+    public function cincilan()
+    {
+        return $this->hasOne("App\Cicilan");
+    }
 }

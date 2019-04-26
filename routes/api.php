@@ -18,7 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix' => 'user', 'middleware' => 'auth:nasabah'], function(){
-	Route::get('/test', 'Api\NasabahController@test');
+    Route::get('/test', 'Api\NasabahController@test');
+    Route::get('/detail', 'Api\NasabahController@getNasabahDetail');
 });
 
 Route::post('/login', 'Api\AuthController@login');

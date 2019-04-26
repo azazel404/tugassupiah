@@ -61,6 +61,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
 
 		Route::group(['prefix' => 'nasabah'], function(){
 			Route::get('/', 'Admin\NasabahController@index')->name('admin.manage-account.nasabah');
+			Route::get('/update', 'Admin\NasabahController@showUpdateDataNasabah')->name('admin.manage-account.nasabah.update');
+			Route::post('/update', 'Admin\NasabahController@onUpdateDataNasabah')->name('admin.manage-account.nasabah.update.submit');
 		});
 	});
 

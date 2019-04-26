@@ -11,4 +11,14 @@ class NasabahController extends Controller
     {
     	return response()->json(["message" => "oke"]);
     }
+
+    public function getNasabahDetail(Request $req)
+    {
+        $user = $req->user();
+        return response()->json([
+            "message" => "OKE!",
+            "status" => 200,
+            "data" => $user
+        ]);
+    }
 }
