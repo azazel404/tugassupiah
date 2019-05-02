@@ -72,9 +72,9 @@
 												@if(!$admin->is_super_admin)
 													<a href="{{ route('admin.manage-account.admin.edit', $admin->id) }}" class="btn btn-outline-primary">Edit</a>
 													@if($admin->is_active)
-														<a href="{{ route('admin.manage-account.admin.banned', $admin->id) }}" class="btn btn-danger">Banned</a>
+														<a href="{{ route('admin.manage-account.admin.delete', $admin->id) }}" class="btn btn-outline-danger">delete</a>
 													@else
-														<a href="{{ route('admin.manage-account.admin.activate', $admin->id) }}" class="btn btn-success">Aktifkan</a>
+														<a href="{{ route('admin.manage-account.admin.delete', $admin->id) }}" class="btn btn-outline-danger">delete</a>
 													@endif
 												@endif
 											</div>

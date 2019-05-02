@@ -25,7 +25,6 @@ class ContentRequest extends FormRequest
     {
         return [
             "title" => "required|string|max:100",
-            "category_id" => "required|integer",
             "cover" => "required|mimes:jpeg,jpg,bmp,png",
             "content" => "required|string|max:14000"
         ];
@@ -37,9 +36,6 @@ class ContentRequest extends FormRequest
             "title.required" => "Judul konten harus di isi",
             "title.string" => "Judul konten harus berupa karakter",
             "title.max" => "Judul maksimal 100 karakter",
-
-            "category_id.required" => "Kategori harus dipilih",
-            "category_id.integer" => "Kategori tidak valid",
 
             "cover.required" => "Belum ada cover gambar",
             "cover.mimes" => " Cover harus berformat Jpeg, jpg, atau Png",

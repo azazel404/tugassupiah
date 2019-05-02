@@ -40,6 +40,10 @@
 									<input type="text" name="email" class="form-control" placeholder="*email@email.com" value="{{ $admin->email }}">
 								</div>
 							</div>
+							<div class="form-group">
+								<input type="checkbox" name="is_super_admin" value="true">
+								<label>Super Admin</label>
+							</div>
 						</form>
 					</div>
 				</div>

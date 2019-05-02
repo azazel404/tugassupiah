@@ -57,12 +57,14 @@
 									<label>Password</label>
 									<input type="password" class="form-control" placeholder="******" name="password">
 								</div>
-							</div>
-							<div class="form-row">
 								<div class="form-group col">
 									<label>Ketik ulang Password</label>
 									<input type="password" class="form-control" placeholder="******" name="retype_password">
 								</div>
+							</div>
+							<div class="form-group">
+								<input type="checkbox" name="is_super_admin" value="true">
+								<label>Super Admin</label>
 							</div>
 						</form>
 					</div>

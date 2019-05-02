@@ -2,7 +2,7 @@
 @section('content')
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Bpr</b>Pondasi</a>
+    <a href="../../index2.html"><b>Kam</b>pusku</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -38,14 +38,6 @@
         </div>
       </form>
       <!-- /.social-auth-links -->
-
-      <p class="mb-1">
-        <a href="#">I forgot my password</a>
-      </p>
-      <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
-      </p>
-    </div>
     <!-- /.login-card-body -->
   </div>
 </div>

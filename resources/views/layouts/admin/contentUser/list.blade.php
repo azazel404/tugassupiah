@@ -20,11 +20,6 @@
 
 <section class="content">
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12 col-12">
-				<a href="{{ route('admin.content.add') }}" class="btn btn-primary float-right">+ add new</a>
-			</div>
-		</div>
 		<div class="row mt-4">
 			@foreach($contents as $content)
 				<div class="col-md-4 col-12 mt-2">
@@ -33,8 +28,7 @@
 						<div class="card-body">
 							<h5 class="card-title">{{ $content->title }}</h5>
 							<br>
-							<a href="{{ route('admin.content.edit', $content->id) }}" class="btn btn-primary mt-3">Edit</a>
-							<a id="btnDeleteContent" href="javascript:void(0)" data-id="{{ $content->id }}" class="btn btn-danger mt-3">Hapus</a>
+							<a href="{{ route('admin.berita.detail', $content->id) }}" class="btn btn-primary btn-block mt-3">detail</a>
 						</div>
 					</div>
 				</div>

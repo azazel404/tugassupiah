@@ -8,13 +8,13 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0 text-dark">Konten {{ $content->title }}</h1>
+				<h1 class="m-0 text-dark">Berita {{ $content->title }}</h1>
 			</div><!-- /.col -->
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-					<li class="breadcrumb-item"><a href="{{ route('admin.content') }}">Kontent</a></li>
-					<li class="breadcrumb-item active">Edit Konten</li>
+					<li class="breadcrumb-item"><a href="{{ route('admin.content') }}">Berita</a></li>
+					<li class="breadcrumb-item active">Edit Berita</li>
 				</ol>
 			</div><!-- /.col -->
 		</div><!-- /.row -->
@@ -28,7 +28,7 @@
 			<div class="col-md-12 col-12">
 				<div class="card">
 					<div class="card-header">
-						<span class="font-weight-light" style="font-size: 20px;">Edit konten</span> <button form="addContent" type="submit" class="btn btn-primary float-right">Simpan</button>
+						<span class="font-weight-light" style="font-size: 20px;">Edit Berita</span> <button form="addContent" type="submit" class="btn btn-primary float-right">Simpan</button>
 					</div>
 					<div class="card-body">
 						@if(Session::has('error'))
@@ -41,35 +41,17 @@
 							<div class="form-row">
 								<div class="form-group col">
 									<label>Judul</label>
-									<input type="text" name="title" class="form-control" placeholder="Uzumaki naruto" value="{{ $content->title }}">
+									<input type="text" name="title" class="form-control" placeholder="" value="{{ $content->title }}">
 								</div>
 								<div class="form-group col">
 									<label>Cover gambar</label>
 									<br>
-									<img src="{{ asset('storage/cover/') . '/' . $content->cover }}" alt="{{ $content->title }}" style="width: 50%;">
+									<img src="{{ asset('img/blog/') . '/' . $content->cover }}" alt="{{ $content->title }}" style="width: 300px; height:300px">
 									<input type="file" name="cover" class="form-control mt-2">
 								</div>
 							</div>
-							<div class="form-row">
-								<div class="form-group col">
-									<label>Kategori</label>
-									<select id="slcCategory" class="form-control" name="category_id">
-										@foreach($categories as $category)
-										<option value="{{ $category->id }}" {{ ($category->id == $category->id ? 'selected' : '') }}>{{ $category->name }}</option>
-										@endforeach
-									</select>
-								</div>
-								<div class="form-group col">
-									<label>Sub kategori</label>
-									<select id="slcSubCategory" class="form-control" name="category_item_id">
-										@foreach($category_items as $category_item)
-										<option value="{{ $category_item->id }}" {{ ($category_item->id == $content->category_item_id ? 'selected' : '') }}>{{ $category_item->name }}</option>
-										@endforeach
-									</select>
-								</div>
-							</div>
                             <div class="form-group">
-                                <label>Konten</label>
+                                <label>Berita</label>
                                 <!-- <div id="progress" class="progress">
 									<div id="progress-bar" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
 										<b id="progress-bar-value">25%</b>										

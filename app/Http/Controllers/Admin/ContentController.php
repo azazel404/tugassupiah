@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use Storage;
 use App\Content;
-use App\Category;
-use App\CategoryItem;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContentRequest;
@@ -21,21 +19,18 @@ class ContentController extends Controller
 
     public function addContent()
     {
-        $category = Category::orderBy('name', 'asc')->get();
-
-        return view('layouts.admin.content.add', ['categories' => $category]);
+        return view('layouts.admin.content.add');
     }
 
     public function createContent(ContentRequest $req)
     {
         $content = new Content;
-        $cover = $req->cover->store('public/cover');
         $content->title = $req->title;
         $content->slug = str_slug($req->title);
-        $content->category_id = $req->category_id;
-        $content->category_item_id = $req->category_item_id;
-        $content->cover = basename($cover);
         $content->content = $req->content;
+        $cover = time().".".$req->cover->getClientOriginalExtension();
+        $content->cover = $cover;
+        $req->cover->move(public_path('img/blog'), $cover);
 
         if (!$content->save()) {
             return back()->with('error', 'something went wrong');
@@ -47,10 +42,7 @@ class ContentController extends Controller
     public function editContent($id)
     {
         $content = Content::find($id);
-        $category = Category::orderBy('name', 'asc')->get();
-        $category_item = CategoryItem::orderBy('name', 'asc')->get();
-
-        return view('layouts.admin.content.edit', ['content' => $content, 'categories' => $category, 'category_items' => $category_item]);
+        return view('layouts.admin.content.edit', ['content' => $content]);
     }
 
     public function updateContent(Request $req, $id)
@@ -58,14 +50,12 @@ class ContentController extends Controller
         $content = Content::find($id);
         $content->title = $req->title;
         $content->slug = str_slug($req->title);
-        $content->category_id = $req->category_id;
-        $content->category_item_id = $req->category_item_id;
         $content->content = $req->content;
 
-        if ($req->hasFile('cover')) {
-            Storage::delete('public/cover/' . $content->cover);
-            $cover = $req->cover->store('public/cover');
-            $content->cover = basename($cover);
+          if (isset($req->cover)) {
+            $cover = time().".".$req->cover->getClientOriginalExtension();
+            $content->cover = $cover;
+            $req->cover->move(public_path('img/blog'), $cover);
         }
 
         if (!$content->save()) {
