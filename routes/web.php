@@ -22,7 +22,14 @@
 
 //tampilan index pertama login
 
-Route::get('/', 'Auth\AuthController@showLoginForm')->name('login');
+Route::get('/', 'User\HomeController@index')->name('home');
+Route::get('/content-list', 'User\HomeController@getContentList')->name('content.list');
+Route::get('/content/{slug}', 'User\HomeController@getDetailContent')->name('content.detail');
+
+Route::get('/pelajaranmateri-view', 'User\HomeController@getDetailPelajaranMateri')->name('pelajaran.list');
+Route::get('/calendar-mahasiswa', 'User\HomeController@CalendarMahasiswa')->name('calendarmahasiswa.list');
+//tampilan login
+Route::get('/login', 'Auth\AuthController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\AuthController@login')->name('login.submit');
 Route::get('/logout', 'Auth\AuthController@logout')->name('logout');
 
